@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: lifescc-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: lifescc
+      MYSQL_USER: lifescc
+      MYSQL_PASSWORD: lifescc
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - lifescc_mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+
+volumes:
+  lifescc_mysql_data:
