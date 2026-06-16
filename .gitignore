@@ -1,6 +1,7 @@
 node_modules/
 vendor/
 .env
-dist/
+backend/.env
+deploy/test/output/
 .DS_Store
 deploy/test/output/

@@ -1,9 +1,12 @@
+import imgSkin from '../assets/agei.png'
+import imgHair from '../assets/hairloss.png'
+import imgWeight from '../assets/weight.jpg'
 import { SKIN_DROPDOWN_ITEMS } from './skinTreatments.js'
 import { WEIGHT_DROPDOWN_ITEMS, WEIGHT_LOSS_TREATMENTS } from './weightTreatments.js'
 
 /** Light loop preview for skin-line labels (matches site imagery). */
-const SKIN_PREVIEW_IMAGE = 'https://www.lifescc.com/img/agei.png'
-const HAIR_PREVIEW_IMAGE = 'https://www.lifescc.com/img/loss.jpg'
+const SKIN_PREVIEW_IMAGE = imgSkin
+const HAIR_PREVIEW_IMAGE = imgHair
 
 function norm(s) {
   return String(s || '')
@@ -54,7 +57,7 @@ export function getChatbotTreatmentPreview(serviceLabel) {
 
   if (n.includes('weight')) {
     return {
-      image: 'https://www.lifescc.com/img/loss.jpg',
+      image: imgWeight,
       title: 'Weight',
     }
   }

@@ -23,6 +23,7 @@ cp -R "$ROOT/backend/vendor" "$OUT/"
 cp "$ROOT/deploy/test/.htaccess" "$OUT/"
 cp "$ROOT/web/src/constants/siteEmbeddedChatbot.json" "$OUT/data/"
 cp "$ROOT/backend/.env.example" "$OUT/.env.example"
+cp "$ROOT/deploy/test/.env.hostinger" "$OUT/.env.hostinger"
 
 if [ -d "$ROOT/backend/public/uploads" ]; then
   cp -R "$ROOT/backend/public/uploads/"* "$OUT/uploads/" 2>/dev/null || true
@@ -38,7 +39,7 @@ echo "  $OUT"
 echo "to Hostinger: public_html/test/"
 echo ""
 echo "On the server:"
-echo "  1. Copy .env.example → .env and set DB_*, SMTP_*, APP_BASE_PATH=/test"
+echo "  1. Copy .env.hostinger → .env on the server; set DB_* and SMTP_PASS"
 echo "  2. chmod 755 uploads data && chmod 644 data/siteEmbeddedChatbot.json (writable for chatbot toggle)"
 echo "  3. Import database/init.sql in phpMyAdmin"
 echo "  4. Visit https://tefenoza.com/test/api/health"

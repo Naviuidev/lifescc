@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import mainLogo from '../assets/main-logo1.png'
+import NavRouteLink from './NavRouteLink.jsx'
 import NavbarTopBar from './NavbarTopBar.jsx'
 import { PROGRAM_DROPDOWN_ITEMS } from '../constants/programDropdownItems.js'
 import { WEIGHT_DROPDOWN_ITEMS } from '../constants/weightTreatments.js'
@@ -64,12 +64,12 @@ function DropdownMenu({ id, label, items }) {
         {items.map((item) => (
           <Fragment key={item.label}>
             <li>
-              <a
+              <NavRouteLink
                 className={`dropdown-item${item.featured ? ' dropdown-item--featured' : ''}`}
-                href={item.href}
+                to={item.href}
               >
                 {item.label}
-              </a>
+              </NavRouteLink>
             </li>
             {item.dividerAfter ? (
               <li>
@@ -108,13 +108,13 @@ function MobileAccordionSection({ id, label, items, isOpen, onToggle, onNavigate
           {items.map((item) => (
             <Fragment key={item.label}>
               <li>
-                <a
-                  href={item.href}
+                <NavRouteLink
+                  to={item.href}
                   className={`mobile-nav-accordion__link${item.featured ? ' mobile-nav-accordion__link--featured' : ''}`}
                   onClick={onNavigate}
                 >
                   {item.label}
-                </a>
+                </NavRouteLink>
               </li>
               {item.dividerAfter ? (
                 <li className="mobile-nav-accordion__divider" aria-hidden />
@@ -211,13 +211,13 @@ export default function Navbar() {
         <div className="navbar-shell-inner navbar-shell-inner--main">
           <div className="navbar-glass-pill">
             <div className="container-fluid navbar-inner px-3 px-lg-4 d-flex align-items-center flex-wrap flex-lg-nowrap gap-2">
-              <Link className="navbar-brand d-flex align-items-center" to="/">
+              <NavRouteLink className="navbar-brand d-flex align-items-center" to="/">
                 <img
                   src={mainLogo}
                   alt="Lifescc"
                   className="navbar-logo"
                 />
-              </Link>
+              </NavRouteLink>
 
               <button
                 className={`navbar-toggler-animate d-lg-none ${mobileMenuOpen ? 'is-open' : ''}`}
@@ -238,9 +238,9 @@ export default function Navbar() {
               >
                 <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/about-us">
+                    <NavRouteLink className="nav-link" to="/about-us">
                       About
-                    </Link>
+                    </NavRouteLink>
                   </li>
 
                   <DropdownMenu id="programs" label="Programs" items={dropdownItems.programs} />
@@ -249,30 +249,30 @@ export default function Navbar() {
                   <DropdownMenu id="hair" label="Hair" items={dropdownItems.hair} />
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/book-an-appointment">
+                    <NavRouteLink className="nav-link" to="/book-an-appointment">
                       Book appointment
-                    </Link>
+                    </NavRouteLink>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/testimonials">
+                    <NavRouteLink className="nav-link" to="/testimonials">
                       Testimonials
-                    </Link>
+                    </NavRouteLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/blog">
+                    <NavRouteLink className="nav-link" to="/blog">
                       Blogs
-                    </Link>
+                    </NavRouteLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/contact-us">
+                    <NavRouteLink className="nav-link" to="/contact-us">
                       Contact
-                    </Link>
+                    </NavRouteLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/franchise">
+                    <NavRouteLink className="nav-link" to="/franchise">
                       Franchise
-                    </Link>
+                    </NavRouteLink>
                   </li>
                 </ul>
               </div>
@@ -295,7 +295,7 @@ export default function Navbar() {
       >
         <div className="mobile-nav-drawer__inner">
           <div className="mobile-nav-drawer__head">
-            <Link
+            <NavRouteLink
               to="/"
               className="mobile-nav-drawer__brand"
               onClick={closeMobile}
@@ -305,7 +305,7 @@ export default function Navbar() {
                 alt="Lifescc"
                 className="mobile-nav-drawer__logo"
               />
-            </Link>
+            </NavRouteLink>
             <button
               type="button"
               className="mobile-nav-drawer__close"
@@ -321,9 +321,9 @@ export default function Navbar() {
           </div>
           <ul className="mobile-nav-drawer__list">
             <li>
-              <Link to="/about-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/about-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 About
-              </Link>
+              </NavRouteLink>
             </li>
 
             <MobileAccordionSection
@@ -360,29 +360,29 @@ export default function Navbar() {
             />
 
             <li>
-              <Link to="/book-an-appointment" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/book-an-appointment" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Book appointment
-              </Link>
+              </NavRouteLink>
             </li>
             <li>
-              <Link to="/testimonials" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/testimonials" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Testimonials
-              </Link>
+              </NavRouteLink>
             </li>
             <li>
-              <Link to="/blog" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/blog" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Blogs
-              </Link>
+              </NavRouteLink>
             </li>
             <li>
-              <Link to="/contact-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/contact-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Contact
-              </Link>
+              </NavRouteLink>
             </li>
             <li>
-              <Link to="/franchise" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <NavRouteLink to="/franchise" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Franchise
-              </Link>
+              </NavRouteLink>
             </li>
           </ul>
         </div>

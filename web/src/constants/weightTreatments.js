@@ -1,39 +1,46 @@
+import imgCoolsculpting from '../assets/cools1Img.jpg'
+import imgLiposuction from '../assets/t3.png'
+import imgZimmer from '../assets/zimmer1.jpg'
+import imgInchLoss from '../assets/t6.jpg'
+import imgCryolipolysis from '../assets/t4.jpg'
+import imgFigureCorrection from '../assets/t1.png'
+
 /** Home page treatment cards (images + anchors for deep links). */
 export const WEIGHT_LOSS_TREATMENTS = [
   {
     slug: 'wlt-coolsculpting',
     title: 'Coolsculpting',
-    image: 'https://www.lifescc.com/img/cools1.jpeg',
+    image: imgCoolsculpting,
     to: '/coolsculpting',
   },
   {
     slug: 'wlt-nonsurgical-liposuction',
     title: 'Non Surgical Liposuction',
-    image: 'https://www.lifescc.com/img/t3.png',
+    image: imgLiposuction,
     to: '/non-surgical-liposuction',
   },
   {
     slug: 'wlt-zimmer',
     title: 'Zimmer',
-    image: 'https://www.lifescc.com/img/loss.jpg',
+    image: imgZimmer,
     to: '/zimmer',
   },
   {
     slug: 'wlt-inch-loss',
     title: 'Inch Loss',
-    image: 'https://www.lifescc.com/img/t6.png',
+    image: imgInchLoss,
     to: '/inch-loss',
   },
   {
     slug: 'wlt-cryolipolysis',
     title: 'Cryolipolysis Treatment',
-    image: 'https://www.lifescc.com/img/t4.jpg',
+    image: imgCryolipolysis,
     to: '/cryolipolysis',
   },
   {
     slug: 'wlt-figure-correction',
     title: 'Figure Correction',
-    image: 'https://www.lifescc.com/img/t1.png',
+    image: imgFigureCorrection,
     to: '/figure-correction',
   },
 ]

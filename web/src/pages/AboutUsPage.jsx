@@ -1,11 +1,13 @@
 import BeforeAfterSlider from '../components/BeforeAfterSlider.jsx'
 import Navbar from '../components/Navbar.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
+import imgAfter from '../assets/before-after-1.jpg'
+import imgBefore from '../assets/before-after-2.jpg'
 import './HomePage.css'
 import './AboutUsPage.css'
 
-const IMG_AFTER = 'https://www.lifescc.com/img/before-after-1.jpg'
-const IMG_BEFORE = 'https://www.lifescc.com/img/before-after-2.jpg'
+const IMG_AFTER = imgAfter
+const IMG_BEFORE = imgBefore
 
 export default function AboutUsPage() {
   return (
