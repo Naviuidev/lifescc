@@ -2,6 +2,26 @@
 
 declare(strict_types=1);
 
+/**
+ * Hostinger often uses index.php as the directory index before index.html.
+ * Serve the React SPA unless this request is for /api/*.
+ */
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+$appDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
+$appDir = rtrim($appDir, '/');
+$relativePath = $requestPath;
+if ($appDir !== '' && $appDir !== '/' && str_starts_with($requestPath, $appDir)) {
+    $relativePath = substr($requestPath, strlen($appDir)) ?: '/';
+}
+if (!preg_match('#^/api(/|$)#', $relativePath)) {
+    $indexHtml = __DIR__ . '/index.html';
+    if (is_file($indexHtml)) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($indexHtml);
+        exit;
+    }
+}
+
 header('Content-Type: application/json; charset=utf-8');
 
 require is_file(__DIR__ . '/src/bootstrap.php')

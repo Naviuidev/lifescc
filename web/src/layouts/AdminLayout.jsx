@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useState } from 'react'
-import { NavLink, Outlet, Link, useLocation } from 'react-router-dom'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import mainLogo from '../assets/main-logo1.png'
-import { useSiteChatbotSettings } from '../hooks/useSiteChatbotSettings.js'
+import NavRouteLink from '../components/NavRouteLink.jsx'
+import { stripAppBase } from '../utils/appBase.js'
 import './AdminLayout.css'
 
 function IconDashboard({ active }) {
@@ -435,11 +436,12 @@ function RefreshMini({ className }) {
 
 export default function AdminLayout() {
   const location = useLocation()
-  const videoSection = location.pathname.startsWith('/admin/videos')
-  const blogSection = location.pathname.startsWith('/admin/blogs')
-  const svcWeight = location.pathname.startsWith('/admin/services/weight-loss')
-  const svcSkin = location.pathname.startsWith('/admin/services/skin')
-  const svcHair = location.pathname.startsWith('/admin/services/hair')
+  const routePath = stripAppBase(location.pathname)
+  const videoSection = routePath.startsWith('/admin/videos')
+  const blogSection = routePath.startsWith('/admin/blogs')
+  const svcWeight = routePath.startsWith('/admin/services/weight-loss')
+  const svcSkin = routePath.startsWith('/admin/services/skin')
+  const svcHair = routePath.startsWith('/admin/services/hair')
   const [siteChatbotEnabled, setSiteChatbotEnabled] = useState(false)
   const [siteChatbotLoading, setSiteChatbotLoading] = useState(true)
   const [siteChatbotSaving, setSiteChatbotSaving] = useState(false)
@@ -517,9 +519,9 @@ export default function AdminLayout() {
       <aside className="admin-sidebar-liquid" aria-label="Admin navigation">
         <div className="admin-sidebar-liquid__shine" aria-hidden />
         <div className="admin-sidebar-liquid__inner">
-          <Link to="/admin/dashboard" className="admin-sidebar-liquid__logo-link" title="Lifescc" aria-label="Lifescc home">
+          <NavRouteLink to="/admin/dashboard" className="admin-sidebar-liquid__logo-link" title="Lifescc" aria-label="Lifescc home">
             <img src={mainLogo} alt="" className="admin-sidebar-liquid__logo" />
-          </Link>
+          </NavRouteLink>
           <nav className="admin-sidebar-liquid__nav">
             <NavLink
               to="/admin/dashboard"
@@ -651,9 +653,9 @@ export default function AdminLayout() {
               <div className="admin-sidebar-flyout__menu admin-sidebar-flyout__menu--wide" role="menu" aria-label="Weight loss">
                 <p className="admin-sidebar-flyout__hint">Main contact</p>
                 <p className="admin-sidebar-flyout__muted">Assign owner — next step</p>
-                <Link to="/admin/services/weight-loss" className="admin-sidebar-flyout__item" role="menuitem">
+                <NavRouteLink to="/admin/services/weight-loss" className="admin-sidebar-flyout__item" role="menuitem">
                   Open
-                </Link>
+                </NavRouteLink>
               </div>
             </div>
             <div className={`admin-sidebar-flyout${svcSkin ? ' is-active' : ''}`}>
@@ -669,9 +671,9 @@ export default function AdminLayout() {
               <div className="admin-sidebar-flyout__menu admin-sidebar-flyout__menu--wide" role="menu" aria-label="Skin">
                 <p className="admin-sidebar-flyout__hint">Main contact</p>
                 <p className="admin-sidebar-flyout__muted">Assign owner — next step</p>
-                <Link to="/admin/services/skin" className="admin-sidebar-flyout__item" role="menuitem">
+                <NavRouteLink to="/admin/services/skin" className="admin-sidebar-flyout__item" role="menuitem">
                   Open
-                </Link>
+                </NavRouteLink>
               </div>
             </div>
             <div className={`admin-sidebar-flyout${svcHair ? ' is-active' : ''}`}>
@@ -687,9 +689,9 @@ export default function AdminLayout() {
               <div className="admin-sidebar-flyout__menu admin-sidebar-flyout__menu--wide" role="menu" aria-label="Hair">
                 <p className="admin-sidebar-flyout__hint">Main contact</p>
                 <p className="admin-sidebar-flyout__muted">Assign owner — next step</p>
-                <Link to="/admin/services/hair" className="admin-sidebar-flyout__item" role="menuitem">
+                <NavRouteLink to="/admin/services/hair" className="admin-sidebar-flyout__item" role="menuitem">
                   Open
-                </Link>
+                </NavRouteLink>
               </div>
             </div>
             <NavLink
@@ -725,19 +727,19 @@ export default function AdminLayout() {
                 </span>
               </NavLink>
               <div className="admin-sidebar-flyout__menu" role="menu" aria-label="Blog actions">
-                <Link to="/admin/blogs/new" className="admin-sidebar-flyout__item" role="menuitem">
+                <NavRouteLink to="/admin/blogs/new" className="admin-sidebar-flyout__item" role="menuitem">
                   New post
-                </Link>
-                <Link to="/admin/blogs" className="admin-sidebar-flyout__item" role="menuitem">
+                </NavRouteLink>
+                <NavRouteLink to="/admin/blogs" className="admin-sidebar-flyout__item" role="menuitem">
                   <RefreshMini className="admin-sidebar-flyout__mini" />
                   All blogs
-                </Link>
-                <Link to="/admin/blogs/submissions" className="admin-sidebar-flyout__item" role="menuitem">
+                </NavRouteLink>
+                <NavRouteLink to="/admin/blogs/submissions" className="admin-sidebar-flyout__item" role="menuitem">
                   Form submissions
-                </Link>
-                <Link to="/admin/blogs/analytics" className="admin-sidebar-flyout__item" role="menuitem">
+                </NavRouteLink>
+                <NavRouteLink to="/admin/blogs/analytics" className="admin-sidebar-flyout__item" role="menuitem">
                   Analytics
-                </Link>
+                </NavRouteLink>
               </div>
             </div>
             <div className={`admin-sidebar-flyout${videoSection ? ' is-active' : ''}`}>
@@ -753,21 +755,21 @@ export default function AdminLayout() {
                 </span>
               </NavLink>
               <div className="admin-sidebar-flyout__menu" role="menu" aria-label="Video actions">
-                <Link to="/admin/videos/add" className="admin-sidebar-flyout__item" role="menuitem">
+                <NavRouteLink to="/admin/videos/add" className="admin-sidebar-flyout__item" role="menuitem">
                   Add video
-                </Link>
-                <Link to="/admin/videos" className="admin-sidebar-flyout__item" role="menuitem">
+                </NavRouteLink>
+                <NavRouteLink to="/admin/videos" className="admin-sidebar-flyout__item" role="menuitem">
                   <RefreshMini className="admin-sidebar-flyout__mini" />
                   All videos
-                </Link>
+                </NavRouteLink>
               </div>
             </div>
           </nav>
-          <Link to="/" className="admin-sidebar-liquid__footer-link" title="Back to site">
+          <NavRouteLink to="/" className="admin-sidebar-liquid__footer-link" title="Back to site">
             <span className="admin-sidebar-liquid__icon">
               <IconArrowBack />
             </span>
-          </Link>
+          </NavRouteLink>
         </div>
       </aside>
 

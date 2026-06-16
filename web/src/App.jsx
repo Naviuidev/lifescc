@@ -61,11 +61,13 @@ import ProgramDiabetesManagementProgrammePage from './pages/ProgramDiabetesManag
 import ProgramSuperWomanPage from './pages/ProgramSuperWomanPage.jsx'
 import ProgramKidsNutritionPage from './pages/ProgramKidsNutritionPage.jsx'
 import SiteChatbotWidget from './components/SiteChatbotWidget.jsx'
+import { stripAppBase } from './utils/appBase.js'
 import './App.css'
 
 function AppRoutes() {
   const location = useLocation()
-  const showPublicChatbot = !location.pathname.startsWith('/admin')
+  const routePath = stripAppBase(location.pathname)
+  const showPublicChatbot = !routePath.startsWith('/admin')
   const [chatbotEnabled, setChatbotEnabled] = useState(null)
 
   useEffect(() => {

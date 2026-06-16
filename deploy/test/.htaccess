@@ -1,29 +1,24 @@
 # Hostinger: public_html/test/.htaccess
-# React SPA at /test/ + API at /test/api/*
 
+# React first — do not list index.php here (Hostinger prefers PHP otherwise)
 DirectoryIndex index.html
-
-<IfModule mod_negotiation.c>
-    Options -MultiViews
-</IfModule>
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /test/
 
-    # API → PHP (only paths starting with api/)
+    # API only → PHP
     RewriteRule ^api(/.*)?$ index.php [L,QSA]
 
-    # Real files/folders (assets, uploads, index.html, favicon, etc.)
+    # Existing files (assets, uploads, index.html, etc.)
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # All other URLs → React (client-side routes)
+    # Client-side routes → React
     RewriteRule ^ index.html [L]
 </IfModule>
 
-# Block web access to secrets
 <Files ".env">
     <IfModule mod_authz_core.c>
         Require all denied

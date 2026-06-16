@@ -37,3 +37,13 @@ export function routerBasename() {
   const base = appBasePath()
   return base || undefined
 }
+
+/** Route path without subfolder prefix (e.g. /test/admin → /admin). */
+export function stripAppBase(pathname) {
+  const path = String(pathname ?? '') || '/'
+  const base = appBasePath()
+  if (base && (path === base || path.startsWith(`${base}/`))) {
+    return path.slice(base.length) || '/'
+  }
+  return path
+}
