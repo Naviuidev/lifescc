@@ -1,0 +1,162 @@
+/* Hero — ban-pigment: contain, left (matches laser / acne skin heroes) */
+.skinpigment-page.coolsculpting-page .skinpigment-banner-hero.coolsculpting-hero {
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.skinpigment-page .skinpigment-banner-hero__scrim.coolsculpting-hero__scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.35) 34%,
+    rgba(255, 255, 255, 0.78) 52%,
+    rgba(255, 255, 255, 0.94) 68%,
+    #ffffff 100%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .skinpigment-page.coolsculpting-page .skinpigment-banner-hero.coolsculpting-hero.coolsculpting-hero--with-inline-form {
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+/* Intro */
+.skinpigment-intro {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.skinpigment-intro__shell {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skinpigment-intro__title {
+  margin: 0 0 clamp(0.85rem, 2vw, 1.15rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.skinpigment-intro__lead {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.55;
+  color: #0f172a;
+}
+
+.skinpigment-intro__p {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+/* Treatment at Lifescc — 8 + 4 */
+.skinpigment-treatment {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.skinpigment-treatment__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.skinpigment-treatment__row {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .skinpigment-treatment__row {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: center;
+  }
+}
+
+.skinpigment-treatment__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skinpigment-treatment__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.skinpigment-treatment__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Why Lifescc — Contact Us–style full-bleed bg (`contact-us-page-wrap` + :root --contact-us-bg-image) */
+.skinpigment-why {
+  width: 100%;
+  color: #111827;
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+.skinpigment-why__band.contact-us-page-wrap {
+  justify-content: center;
+  min-height: clamp(32rem, 58vh, 52rem);
+}
+
+.skinpigment-why__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: min(46rem, 100%);
+  margin: 0 auto;
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+.skinpigment-why__inner .coolsculpting-treatment__title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.skinpigment-why__inner .coolsculpting-treatment__p {
+  text-align: start;
+}
+
+.skinpigment-why__inner .coolsculpting-treatment__p a {
+  color: #15803d;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.skinpigment-why__inner .coolsculpting-treatment__p a:hover {
+  color: #166534;
+}
+
+.skinpigment-why__cta {
+  margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
+}
+
+/* Book strip */
+.skinpigment-page .skinpigment-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.skinpigment-page .skinpigment-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

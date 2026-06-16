@@ -1,0 +1,50 @@
+.admin-chatbot-users__meta {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #6b6375;
+}
+
+.admin-chatbot-users__summary {
+  display: inline-block;
+  max-width: min(420px, 48vw);
+  font-size: 0.9rem;
+}
+
+.admin-chatbot-users__json {
+  margin: 0;
+  max-width: min(560px, 52vw);
+  max-height: 9rem;
+  overflow: auto;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.admin-chatbot-users__pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.admin-chatbot-users__page-num {
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.admin-chatbot-users__per {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

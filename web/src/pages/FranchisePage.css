@@ -1,0 +1,484 @@
+/* Franchise — hero (additional sections follow in later steps) */
+.franchise-page {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  color-scheme: light;
+}
+
+/* Image is 1520×450 — match aspect so cover does not crop top/bottom on wide viewports */
+.franchise-hero {
+  --franchise-img-w: 1520;
+  --franchise-img-h: 450;
+  position: relative;
+  isolation: isolate;
+  /* At least full visible frame of the panorama; never shorter than readable hero */
+  min-height: max(clamp(22rem, 38svh, 30rem), calc(100vw * var(--franchise-img-h) / var(--franchise-img-w)));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: var(--franchise-hero-nav-clearance, calc(var(--navbar-top-icons-h, 76px) + 5.25rem)) clamp(1rem, 4vw, 2rem)
+    clamp(2rem, 5vw, 3rem);
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.franchise-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #0f2918;
+  background-image: linear-gradient(
+      115deg,
+      rgba(8, 64, 32, 0.92) 0%,
+      rgba(10, 74, 36, 0.62) 38%,
+      rgba(15, 23, 42, 0.5) 100%
+    ),
+    url('../assets/franchise.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* scroll: cover is relative to this hero — fixed uses the viewport and crops the pano incorrectly */
+  background-attachment: scroll;
+}
+
+.franchise-hero__stack {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.franchise-hero__content {
+  max-width: 44rem;
+  text-align: left;
+}
+
+.franchise-hero__eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.franchise-hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+.franchise-hero__accent {
+  display: inline-block;
+  padding: 0.15rem 0.85rem;
+  margin-left: 0.25rem;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .franchise-hero__accent {
+    background: rgba(255, 255, 255, 0.88);
+  }
+}
+
+.franchise-hero__lead {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.9vw, 1.0625rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.93);
+  max-width: 42ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Hero inquiry bar (reference: horizontal segmented form) */
+.franchise-hero-form {
+  width: 100%;
+}
+
+.franchise-hero-form__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background: #fff;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.franchise-hero-form__field {
+  flex: 1 1 128px;
+  min-width: 0;
+  padding: 0.7rem 0.85rem;
+  border-right: 1px solid #e8eaee;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  justify-content: center;
+}
+
+.franchise-hero-form__field--planning {
+  flex: 1 1 220px;
+}
+
+.franchise-hero-form__planning-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.franchise-hero-form__control--planning {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.franchise-hero-form__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
+  line-height: 1.2;
+}
+
+.franchise-hero-form__control {
+  position: relative;
+  display: block;
+}
+
+.franchise-hero-form__select,
+.franchise-hero-form__input {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #111827;
+  background: transparent;
+  line-height: 1.35;
+  appearance: none;
+}
+
+.franchise-hero-form__select {
+  padding-right: 1.35rem;
+  cursor: pointer;
+}
+
+.franchise-hero-form__select:focus,
+.franchise-hero-form__input:focus {
+  outline: none;
+}
+
+.franchise-hero-form__select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.franchise-hero-form__input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.franchise-hero-form__chevron {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.franchise-hero-form__date {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  background: transparent;
+}
+
+.franchise-hero-form__date--inline {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 9.5rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color-scheme: light;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .franchise-hero-form__date--inline {
+    background: rgba(248, 250, 252, 0.98);
+    border-color: #e2e8f0;
+  }
+}
+
+.franchise-hero-form__submit-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  border-right: none;
+}
+
+.franchise-hero-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 100%;
+  padding: 0.75rem 1.35rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+/* Light surface + Bootstrap success palette (matches btn-outline-success / subtle) */
+.franchise-hero-form__submit--success-light {
+  --fc-submit-bg: var(--bs-success-bg-subtle, #d1e7dd);
+  --fc-submit-border: var(--bs-success-border-subtle, #a3cfbb);
+  --fc-submit-color: var(--bs-success-text-emphasis, #0a3622);
+  background-color: var(--fc-submit-bg) !important;
+  border: 1px solid var(--fc-submit-border) !important;
+  color: var(--fc-submit-color) !important;
+}
+
+.franchise-hero-form__submit--success-light:hover:not(:disabled) {
+  background-color: #c4e6d4 !important;
+  border-color: #8fcead !important;
+}
+
+.franchise-hero-form__submit--success-light:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.28);
+}
+
+.franchise-hero-form__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.franchise-hero-form__msg {
+  margin: 0.65rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.franchise-hero-form__msg--err {
+  color: #fecaca;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.franchise-hero-form__msg--ok {
+  color: #d1fae5;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 767px) {
+  .franchise-hero-form__field {
+    flex: 1 1 46%;
+    border-right: 1px solid #e8eaee;
+    border-bottom: 1px solid #e8eaee;
+  }
+
+  .franchise-hero-form__submit-wrap {
+    flex: 1 1 100%;
+  }
+
+  .franchise-hero-form__submit {
+    width: 100%;
+    min-height: 3rem;
+  }
+}
+
+/* ——— Big business opportunity (below hero) ——— same bg treatment as Contact page */
+.franchise-opportunity {
+  --franchise-opportunity-bg-image: url('https://clevrblends.com/cdn/shop/articles/madison-lavern-4gcqRf3-f2I-unsplash_1_3050x3050.png?v=1752501671');
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  color: #1f2937;
+  color-scheme: light;
+}
+
+.franchise-opportunity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(
+      180deg,
+      rgba(240, 244, 249, 0.76) 0%,
+      rgba(240, 244, 249, 0.82) 40%,
+      rgba(240, 244, 249, 0.88) 100%
+    ),
+    var(--franchise-opportunity-bg-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+  pointer-events: none;
+}
+
+.franchise-opportunity__shell {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 7vw, 4.5rem);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .franchise-opportunity::before {
+    background-attachment: scroll, scroll;
+  }
+}
+
+.franchise-opportunity__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.franchise-opportunity__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 0 1.25rem;
+}
+
+.franchise-opportunity__divider-line {
+  display: block;
+  width: min(5rem, 18vw);
+  height: 1px;
+  background: #d1d5db;
+}
+
+.franchise-opportunity__leaf {
+  color: #166534;
+  flex-shrink: 0;
+}
+
+.franchise-opportunity__kicker {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #166534;
+  line-height: 1.35;
+}
+
+.franchise-opportunity__lead,
+.franchise-opportunity__list-block,
+.franchise-opportunity__outro,
+.franchise-opportunity__contact {
+  text-align: left;
+}
+
+.franchise-opportunity__lead {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
+  line-height: 1.7;
+  color: #374151;
+}
+
+.franchise-opportunity__phone {
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+
+.franchise-opportunity__phone:hover {
+  text-decoration: underline;
+}
+
+.franchise-opportunity__list-block {
+  margin: 0 0 1.75rem;
+}
+
+.franchise-opportunity__list-title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(0.98rem, 1.7vw, 1.0625rem);
+  font-weight: 700;
+  color: #166534;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  line-height: 1.45;
+}
+
+.franchise-opportunity__list {
+  margin: 0;
+  padding: 0 0 0 1.35rem;
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
+  line-height: 1.65;
+  color: #374151;
+  list-style-type: circle;
+}
+
+.franchise-opportunity__list li {
+  margin-bottom: 0.65rem;
+}
+
+.franchise-opportunity__list li:last-child {
+  margin-bottom: 0;
+}
+
+.franchise-opportunity__outro {
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
+  line-height: 1.7;
+  color: #374151;
+}
+
+.franchise-opportunity__contact {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.franchise-opportunity__contact-label {
+  color: #166534;
+  font-weight: 700;
+}
+
+.franchise-opportunity__phone--footer {
+  font-weight: 700;
+  color: #111827;
+}
+

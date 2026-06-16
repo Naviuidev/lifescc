@@ -1,0 +1,36 @@
+.skin-treatment-page {
+  color-scheme: light;
+}
+
+.skin-treatment-page__hero {
+  text-align: left;
+  background: linear-gradient(145deg, #ecfdf5 0%, #d1fae5 42%, #f0fdf4 100%);
+}
+
+.skin-treatment-page__hero-scrim {
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 244, 0.55) 100%);
+}
+
+.skin-treatment-page__intro {
+  padding: clamp(2.25rem, 5vw, 3.25rem) clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  background: #fff;
+}
+
+.skin-treatment-page__intro-shell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.skin-treatment-page__intro .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skin-treatment-page .skin-treatment-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.skin-treatment-page .skin-treatment-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

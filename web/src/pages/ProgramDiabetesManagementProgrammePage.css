@@ -1,0 +1,1290 @@
+.program-diabetes-page {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  color-scheme: light;
+}
+
+/* ——— Hero banner with 2-col overlay ——— */
+.program-diabetes-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: clamp(28rem, 72svh, 40rem);
+  display: flex;
+  align-items: center;
+  padding: calc(var(--navbar-top-icons-h, 76px) + 2.5rem) clamp(0rem, 2vw, 0rem)
+    clamp(2.5rem, 6vw, 3.5rem);
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #0a0a0a;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+}
+
+.program-diabetes-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.program-diabetes-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+}
+
+.program-diabetes-hero__copy {
+  min-width: 0;
+  text-align: start;
+}
+
+.program-diabetes-hero__eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(167, 243, 187, 0.95);
+}
+
+.program-diabetes-hero__title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: #ffffff;
+}
+
+.program-diabetes-hero__lead {
+  margin: 0 0 clamp(1.35rem, 2.5vw, 1.75rem);
+  max-width: 36rem;
+  font-size: clamp(1rem, 1.45vw, 1.125rem);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.program-diabetes-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 clamp(1.35rem, 2.5vw, 1.75rem);
+  padding: 0;
+  list-style: none;
+}
+
+.program-diabetes-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.program-diabetes-hero__cta {
+  margin-top: 0.15rem;
+}
+
+.program-diabetes-hero__media-col {
+  min-width: 0;
+}
+
+.program-diabetes-hero__figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.program-diabetes-hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ——— Audience card — col-12 ——— */
+.program-diabetes-audience {
+  padding: clamp(2.75rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.5rem);
+  background: #f4f7f5;
+}
+
+.program-diabetes-audience__card {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.75rem);
+  text-align: start;
+  background: #ffffff;
+  border: 1px solid rgba(10, 74, 36, 0.1);
+  border-radius: 20px;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 16px 40px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.program-diabetes-audience__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0a4a24 0%, #16a34a 100%);
+}
+
+.program-diabetes-audience__text {
+  margin: 0;
+  padding-left: 0.65rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.75;
+  color: #374151;
+}
+
+/* ——— Symptom — 2 col ——— */
+.program-diabetes-symptom {
+  padding: clamp(2.75rem, 6vw, 4.25rem) 0 clamp(3rem, 7vw, 4.5rem);
+  background: #ffffff;
+}
+
+.program-diabetes-symptom__copy {
+  min-width: 0;
+}
+
+.program-diabetes-symptom__title {
+  margin: 0 0 clamp(1.15rem, 2.5vw, 1.5rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.program-diabetes-symptom__quote {
+  margin: 0;
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+.program-diabetes-symptom__media-col {
+  min-width: 0;
+}
+
+.program-diabetes-symptom__figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.program-diabetes-symptom__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ——— Client stories — image col-5 + content col-5 ——— */
+.program-diabetes-stories {
+  padding: clamp(2.75rem, 6vw, 4.25rem) 0 clamp(3rem, 7vw, 4.5rem);
+  background: #f4f7f5;
+}
+
+.program-diabetes-stories__media-col,
+.program-diabetes-stories__copy {
+  min-width: 0;
+}
+
+.program-diabetes-stories__figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.program-diabetes-stories__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.program-diabetes-stories__title {
+  margin: 0 0 clamp(1.15rem, 2.5vw, 1.5rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.program-diabetes-stories__quote {
+  margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+.program-diabetes-stories__quote:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Supports — col-12 header + highlights + note cards ——— */
+.program-diabetes-supports {
+  padding: clamp(2.75rem, 6vw, 4.25rem) 0 clamp(3rem, 7vw, 4.75rem);
+  background: #ffffff;
+}
+
+.program-diabetes-supports__intro {
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+}
+
+.program-diabetes-supports__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(10, 74, 36, 0.08);
+  border: 1px solid rgba(10, 74, 36, 0.14);
+}
+
+.program-diabetes-supports__heart {
+  flex-shrink: 0;
+  color: #dc2626;
+  animation: program-diabetes-heart-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes program-diabetes-heart-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-diabetes-supports__heart {
+    animation: none;
+  }
+}
+
+.program-diabetes-supports__title {
+  margin: 0 0 clamp(0.85rem, 2vw, 1.15rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.program-diabetes-supports__brand {
+  color: #0a4a24;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+}
+
+.program-diabetes-supports__lead {
+  margin: 0;
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+.program-diabetes-supports__highlights-card,
+.program-diabetes-supports__note-card {
+  border-radius: 20px;
+  border: 1px solid rgba(10, 74, 36, 0.1);
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 14px 36px rgba(15, 23, 42, 0.07);
+}
+
+.program-diabetes-supports__highlights-card {
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  background: #ffffff;
+}
+
+.program-diabetes-supports__card-badge {
+  display: inline-block;
+  text-align: start;
+  margin: 0 0 clamp(1.15rem, 2.5vw, 1.45rem);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(10, 74, 36, 0.08);
+  border: 1px solid rgba(10, 74, 36, 0.12);
+}
+
+.program-diabetes-supports__card-badge--inline {
+  margin-bottom: 0.85rem;
+}
+
+.program-diabetes-supports__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.program-diabetes-supports__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  line-height: 1.55;
+  color: #374151;
+  text-align: start;
+}
+
+.program-diabetes-supports__check {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: #0a4a24;
+}
+
+.program-diabetes-supports__cards-row {
+  margin-top: 0.15rem;
+}
+
+.program-diabetes-supports__note-card {
+  height: 100%;
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  background: #ffffff;
+}
+
+.program-diabetes-supports__note-card--pink {
+  background: #fdf2f8;
+  border-color: rgba(236, 72, 153, 0.15);
+}
+
+.program-diabetes-supports__note-title {
+  margin: 0 0 0.75rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #0a4a24;
+  text-align: start;
+}
+
+.program-diabetes-supports__note-text {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.4vw, 1.06rem);
+  line-height: 1.68;
+  color: #475569;
+  text-align: start;
+}
+
+/* ——— Expert guidance — dark gradient + col-3 cards ——— */
+.program-diabetes-guidance {
+  padding: clamp(3rem, 7vw, 4.75rem) 0 clamp(3.25rem, 7vw, 5rem);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 115%, rgba(132, 204, 22, 0.14), transparent 58%),
+    linear-gradient(165deg, #0e1f17 0%, #143528 38%, #1a4034 100%);
+  color: #ffffff;
+}
+
+.program-diabetes-guidance__intro-row {
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.program-diabetes-guidance__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.program-diabetes-guidance__title {
+  margin: 0;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.55rem, 3.2vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.program-diabetes-guidance__brand {
+  color: #6ee7a0;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+}
+
+.program-diabetes-guidance__lead {
+  margin: 0;
+  padding-top: clamp(0rem, 2vw, 2.25rem);
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: start;
+}
+
+.program-diabetes-guidance-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.15rem 1.1rem 1rem;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.program-diabetes-guidance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--guidance-accent, #16a34a);
+}
+
+.program-diabetes-guidance-card__number {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.95rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(15, 23, 42, 0.08);
+  pointer-events: none;
+}
+
+.program-diabetes-guidance-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.55rem;
+}
+
+.program-diabetes-guidance-card__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 12px;
+  background: var(--guidance-icon-bg, rgba(22, 163, 74, 0.12));
+  color: var(--guidance-accent, #16a34a);
+}
+
+.program-diabetes-guidance-card__eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  text-align: start;
+}
+
+.program-diabetes-guidance-card__title {
+  margin: 0;
+  padding-right: 1.75rem;
+  flex: 1;
+  min-width: 0;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #0f172a;
+  text-align: start;
+}
+
+.program-diabetes-guidance-card__body {
+  margin: 0 0 0.85rem;
+  font-size: 0.84rem;
+  line-height: 1.58;
+  color: #64748b;
+  text-align: start;
+}
+
+.program-diabetes-guidance-card__list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.program-diabetes-guidance-card__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.program-diabetes-guidance-card__check {
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  color: #16a34a;
+}
+
+.program-diabetes-guidance-card__footer {
+  margin: 0;
+  padding: 0.38rem 0.65rem;
+  border-radius: 999px;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--guidance-footer-text, #166534);
+  background: var(--guidance-footer-bg, rgba(22, 163, 74, 0.12));
+}
+
+.program-diabetes-guidance-card--green {
+  --guidance-accent: #16a34a;
+  --guidance-icon-bg: rgba(22, 163, 74, 0.12);
+  --guidance-footer-bg: rgba(22, 163, 74, 0.12);
+  --guidance-footer-text: #166534;
+}
+
+.program-diabetes-guidance-card--blue {
+  --guidance-accent: #2563eb;
+  --guidance-icon-bg: rgba(37, 99, 235, 0.12);
+  --guidance-footer-bg: rgba(37, 99, 235, 0.12);
+  --guidance-footer-text: #1d4ed8;
+}
+
+.program-diabetes-guidance-card--pink {
+  --guidance-accent: #db2777;
+  --guidance-icon-bg: rgba(219, 39, 119, 0.12);
+  --guidance-footer-bg: rgba(219, 39, 119, 0.12);
+  --guidance-footer-text: #be185d;
+}
+
+.program-diabetes-guidance-card--amber {
+  --guidance-accent: #d97706;
+  --guidance-icon-bg: rgba(217, 119, 6, 0.14);
+  --guidance-footer-bg: rgba(217, 119, 6, 0.14);
+  --guidance-footer-text: #b45309;
+}
+
+/* ——— Why trust — stats cards ——— */
+.program-diabetes-trust {
+  padding: clamp(3rem, 7vw, 4.75rem) 0 clamp(3.25rem, 7vw, 5rem);
+  background: #f3faf5;
+}
+
+.program-diabetes-trust__intro {
+  max-width: 640px;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+}
+
+.program-diabetes-trust__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.14);
+  border: 1px solid rgba(10, 74, 36, 0.1);
+}
+
+.program-diabetes-trust__pill svg {
+  color: #65a30d;
+}
+
+.program-diabetes-trust__title {
+  margin: 0;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+.program-diabetes-trust__brand {
+  color: #84cc16;
+}
+
+.program-diabetes-trust-card {
+  height: 100%;
+  padding: clamp(1.35rem, 3vw, 1.75rem);
+  border-radius: 18px;
+  text-align: start;
+}
+
+.program-diabetes-trust-card--light {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.program-diabetes-trust-card--green {
+  background: linear-gradient(145deg, #bef264 0%, #84cc16 52%, #65a30d 100%);
+  border: 1px solid rgba(101, 163, 13, 0.35);
+  box-shadow: 0 10px 28px rgba(101, 163, 13, 0.22);
+}
+
+.program-diabetes-trust-card__stat {
+  margin: 0 0 0.35rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.program-diabetes-trust-card--green .program-diabetes-trust-card__stat {
+  color: #14532d;
+}
+
+.program-diabetes-trust-card__label {
+  margin: 0 0 0.65rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.program-diabetes-trust-card--green .program-diabetes-trust-card__label {
+  color: #14532d;
+}
+
+.program-diabetes-trust-card__body {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.58;
+  color: #64748b;
+}
+
+.program-diabetes-trust-card--green .program-diabetes-trust-card__body {
+  color: #166534;
+}
+
+/* ——— How it works — facts grid ——— */
+.program-diabetes-facts {
+  position: relative;
+  padding: clamp(3rem, 7vw, 4.75rem) 0 clamp(3.25rem, 7vw, 5rem);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(163, 230, 53, 0.24), transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(14, 165, 233, 0.16), transparent 40%),
+    linear-gradient(140deg, #eff7f1 0%, #e8f2f6 100%);
+  overflow: hidden;
+}
+
+.program-diabetes-facts::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.program-diabetes-facts .container {
+  position: relative;
+  z-index: 1;
+}
+
+.program-diabetes-facts__intro {
+  max-width: 820px;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+}
+
+.program-diabetes-facts__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(10, 74, 36, 0.12);
+}
+
+.program-diabetes-facts__pill-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #84cc16;
+  flex-shrink: 0;
+}
+
+.program-diabetes-facts__title {
+  margin: 0;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.65rem, 3.4vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.program-diabetes-facts__brand {
+  color: #84cc16;
+}
+
+.program-diabetes-facts-card {
+  position: relative;
+  height: 100%;
+  padding: 1.25rem 1.15rem 1.15rem;
+  border-radius: 16px;
+  text-align: start;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.program-diabetes-facts-card__number {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.95rem;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(15, 23, 42, 0.08);
+  pointer-events: none;
+}
+
+.program-diabetes-facts-card__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.85rem;
+  border-radius: 12px;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.16);
+}
+
+.program-diabetes-facts-card__title {
+  margin: 0 0 0.55rem;
+  padding-right: 2rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1rem, 1.45vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.program-diabetes-facts-card__body {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* ——— AI powered wellness ——— */
+.program-diabetes-ai {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.75rem);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(163, 230, 53, 0.24), transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(14, 165, 233, 0.16), transparent 40%),
+    linear-gradient(140deg, #eff7f1 0%, #e8f2f6 100%);
+}
+
+.program-diabetes-ai__panel {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+}
+
+.program-diabetes-ai__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.12);
+  border: 1px solid rgba(10, 74, 36, 0.1);
+}
+
+.program-diabetes-ai__pill svg {
+  color: #65a30d;
+}
+
+.program-diabetes-ai__title {
+  margin: 0 0 0.85rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.program-diabetes-ai__brand {
+  color: #84cc16;
+}
+
+.program-diabetes-ai__lead {
+  margin: 0 0 1.35rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.68;
+  color: #64748b;
+}
+
+.program-diabetes-ai__features {
+  margin-bottom: 1.25rem;
+}
+
+.program-diabetes-ai-feature {
+  height: 100%;
+  padding: 1rem 1rem 0.95rem;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.program-diabetes-ai-feature__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-bottom: 0.55rem;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.18);
+}
+
+.program-diabetes-ai-feature__title {
+  margin: 0 0 0.4rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.program-diabetes-ai-feature__body {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.program-diabetes-ai__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-diabetes-ai__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.12);
+  border: 1px solid rgba(10, 74, 36, 0.1);
+}
+
+.program-diabetes-ai__tag-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: #84cc16;
+  flex-shrink: 0;
+}
+
+.program-diabetes-ai__visual-col {
+  min-width: 0;
+}
+
+.program-diabetes-ai-compare {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(1.15rem, 3vw, 1.75rem);
+  min-height: clamp(18rem, 38vw, 24rem);
+  padding: 0.5rem 0;
+}
+
+.program-diabetes-ai-compare__card {
+  position: relative;
+  margin: 0;
+  flex: 1 1 0;
+  width: min(48%, 14.5rem);
+  max-width: 14.5rem;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+}
+
+.program-diabetes-ai-compare__card--before {
+  z-index: 1;
+}
+
+.program-diabetes-ai-compare__card--after {
+  align-self: flex-start;
+  z-index: 2;
+}
+
+.program-diabetes-ai-compare__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+
+.program-diabetes-ai-compare__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.program-diabetes-ai-compare__badge--before {
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.program-diabetes-ai-compare__badge--after {
+  color: #14532d;
+  background: #bef264;
+}
+
+.program-diabetes-ai-compare__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.85rem 0.9rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.82) 100%);
+  color: #ffffff;
+}
+
+.program-diabetes-ai-compare__caption strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.program-diabetes-ai-compare__caption span {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ——— FAQ accordion ——— */
+.program-diabetes-faq {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.75rem);
+  background: #f8fafc;
+}
+
+.program-diabetes-faq__panel {
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.program-diabetes-faq__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a4a24;
+  background: rgba(132, 204, 22, 0.12);
+  border: 1px solid rgba(10, 74, 36, 0.1);
+}
+
+.program-diabetes-faq__pill svg {
+  color: #65a30d;
+}
+
+.program-diabetes-faq__title {
+  margin: 0 0 0.85rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.program-diabetes-faq__brand {
+  color: #84cc16;
+}
+
+.program-diabetes-faq__lead {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.68;
+  color: #64748b;
+}
+
+.program-diabetes-faq-acc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.program-diabetes-faq-acc__item {
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.program-diabetes-faq-acc__item--open {
+  border-color: rgba(132, 204, 22, 0.45);
+  background: rgba(236, 252, 203, 0.35);
+  box-shadow: 0 4px 16px rgba(132, 204, 22, 0.1);
+}
+
+.program-diabetes-faq-acc__heading {
+  margin: 0;
+}
+
+.program-diabetes-faq-acc__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: none;
+  background: transparent;
+  text-align: start;
+  cursor: pointer;
+}
+
+.program-diabetes-faq-acc__question {
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(0.92rem, 1.35vw, 1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.program-diabetes-faq-acc__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  transition:
+    transform 0.25s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.program-diabetes-faq-acc__toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.program-diabetes-faq-acc__item--open .program-diabetes-faq-acc__toggle {
+  background: #84cc16;
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.program-diabetes-faq-acc__trigger:focus-visible {
+  outline: 2px solid #84cc16;
+  outline-offset: 2px;
+}
+
+.program-diabetes-faq-acc__panel-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.program-diabetes-faq-acc__item--open .program-diabetes-faq-acc__panel-wrap {
+  grid-template-rows: 1fr;
+}
+
+.program-diabetes-faq-acc__panel {
+  overflow: hidden;
+}
+
+.program-diabetes-faq-acc__panel .program-diabetes-faq-acc__answer {
+  margin: 0;
+  padding: 0 1.1rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #64748b;
+  text-align: start;
+}
+
+@media (max-width: 991.98px) {
+  .program-diabetes-ai-compare {
+    min-height: 18rem;
+    max-width: 24rem;
+    margin-inline: auto;
+    gap: 1rem;
+  }
+
+  .program-diabetes-ai-compare__card {
+    max-width: 11.5rem;
+  }
+
+  .program-diabetes-guidance__lead {
+    padding-top: 0;
+  }
+
+  .program-diabetes-stories__figure {
+    max-width: 28rem;
+    margin-inline: auto;
+  }
+
+  .program-diabetes-symptom__figure {
+    max-width: 28rem;
+    margin-inline: auto;
+  }
+
+  .program-diabetes-hero {
+    --program-hero-banner-h: clamp(14rem, 44vw, 19rem);
+    min-height: auto;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: left top;
+    padding-top: calc(var(--navbar-top-icons-h, 76px) + var(--program-hero-banner-h));
+    padding-left: clamp(1rem, 4vw, 1.25rem);
+    padding-right: clamp(1rem, 4vw, 1.25rem);
+    padding-bottom: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .program-diabetes-hero__scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.42) 45%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+  }
+
+  .program-diabetes-hero__media-col {
+    display: none;
+  }
+}
+
+/* Book consultation strip — same layout as weight treatment pages */
+.program-diabetes-page .program-diabetes-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

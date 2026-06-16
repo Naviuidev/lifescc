@@ -1,0 +1,1392 @@
+.coolsculpting-page {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  color-scheme: light;
+}
+
+.coolsculpting-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(22rem, 52svh, 36rem);
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: calc(var(--navbar-top-icons-h, 76px) + 3.5rem) clamp(1rem, 4vw, 2.5rem) clamp(2.5rem, 6vw, 3.5rem);
+  box-sizing: border-box;
+  background-color: #f4f6f5;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left 28% center;
+  overflow: hidden;
+}
+
+.coolsculpting-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 250, 251, 0.1) 0%,
+    rgba(249, 250, 251, 0.35) 38%,
+    rgba(249, 250, 251, 0.82) 58%,
+    rgba(255, 255, 255, 0.95) 72%,
+    #ffffff 100%
+  );
+  pointer-events: none;
+}
+
+.coolsculpting-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.coolsculpting-hero__eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  line-height: 1.2;
+  color: #0a4a24;
+  max-width: 28rem;
+}
+
+.coolsculpting-hero__title {
+  margin: 0 0 1rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #111827;
+  line-height: 1.15;
+  max-width: 20ch;
+  margin-left: auto;
+}
+
+.coolsculpting-hero__lead {
+  margin: 0 0 1.25rem;
+  max-width: min(32rem, 100%);
+  margin-left: auto;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.coolsculpting-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.coolsculpting-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.35rem;
+  border-radius: 999px;
+  font-family: var(--sans, 'Poppins', system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.coolsculpting-hero__btn--primary {
+  background: #0a4a24;
+  color: #fff;
+  border: 1.5px solid #0a4a24;
+}
+
+.coolsculpting-hero__btn--primary:hover {
+  background: #08381c;
+  border-color: #08381c;
+}
+
+.coolsculpting-hero__btn--secondary {
+  background: transparent;
+  color: #0a4a24;
+  border: 1.5px solid rgba(10, 74, 36, 0.45);
+}
+
+.coolsculpting-hero__btn--secondary:hover {
+  background: rgba(10, 74, 36, 0.08);
+}
+
+.coolsculpting-hero__btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.coolsculpting-hero__btn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 767.98px) {
+  .coolsculpting-hero--with-inline-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: clamp(28rem, 84svh, 40rem);
+    padding: calc(var(--navbar-top-icons-h, 76px) + 0.35rem) clamp(0.75rem, 3vw, 1rem)
+      clamp(1rem, 3.5vw, 1.5rem);
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: contain;
+    overflow: hidden;
+  }
+
+  /* Light on the left (banner art); fade only under the form zone */
+  .coolsculpting-page .coolsculpting-hero--with-inline-form .coolsculpting-hero__scrim,
+  .coolsculpting-page .coolsculpting-hero--with-inline-form [class*='-banner-hero__scrim'] {
+    inset: 0;
+    height: auto;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.04) 40%,
+        rgba(255, 255, 255, 0.38) 62%,
+        rgba(255, 255, 255, 0.72) 82%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 38%,
+        rgba(255, 255, 255, 0.42) 62%,
+        rgba(255, 255, 255, 0.88) 100%
+      );
+  }
+
+  .coolsculpting-hero--with-inline-form .coolsculpting-hero__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-left: auto;
+    align-items: stretch;
+    text-align: left;
+    padding: 0;
+    background: transparent;
+    box-sizing: border-box;
+  }
+
+  .coolsculpting-hero--with-inline-form .cryolipolysis-hero-title {
+    text-align: left;
+    margin-left: 0;
+    max-width: 100%;
+    margin-bottom: 0.45rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) {
+    min-height: clamp(26rem, 70svh, 32rem);
+    align-items: flex-end;
+    justify-content: center;
+    background-position: left center;
+    padding-bottom: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.5) 38%,
+      rgba(255, 255, 255, 0.94) 78%,
+      #ffffff 100%
+    );
+  }
+
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__title {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__eyebrow,
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__lead {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .coolsculpting-hero:not(.coolsculpting-hero--with-inline-form) .coolsculpting-hero__actions {
+    justify-content: center;
+  }
+}
+
+/* ——— Treatment intro (two columns + full-width copy) ——— */
+.coolsculpting-treatment {
+  width: 100%;
+  background: #ffffff;
+  color: #111827;
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-treatment__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 6vw, 4rem);
+  box-sizing: border-box;
+  text-align: start;
+}
+
+.coolsculpting-treatment__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .coolsculpting-treatment__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+  }
+}
+
+.coolsculpting-treatment__copy {
+  min-width: 0;
+  text-align: start;
+}
+
+.coolsculpting-treatment__title {
+  margin: 0 0 1.25rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.coolsculpting-treatment__lead {
+  margin: 0 0 1rem;
+  font-size: clamp(0.98rem, 1.35vw, 1.0625rem);
+  line-height: 1.65;
+  color: #374151;
+}
+
+.coolsculpting-treatment__p {
+  margin: 0 0 1rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.03rem);
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+.coolsculpting-treatment__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.coolsculpting-treatment__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.coolsculpting-treatment__full {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--border, #e5e4e7);
+  max-width: none;
+  text-align: start;
+}
+
+.coolsculpting-treatment__full .coolsculpting-treatment__p + .coolsculpting-treatment__p {
+  margin-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Keep treatment band white for clinical layout; text stays dark-on-white */
+  .coolsculpting-treatment {
+    background: #ffffff;
+    color: #111827;
+  }
+
+  .coolsculpting-treatment__title {
+    color: #111827;
+  }
+
+  .coolsculpting-treatment__lead {
+    color: #374151;
+  }
+
+  .coolsculpting-treatment__p {
+    color: #4b5563;
+  }
+
+  .coolsculpting-treatment__figure {
+    background: #f3f4f6;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.06),
+      0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+}
+
+/* ——— Four-step strip (single row) ——— */
+.coolsculpting-four-up {
+  width: 100%;
+  background: #ffffff;
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-four-up__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-four-up__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.5rem, 2vw, 1rem);
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .coolsculpting-four-up__row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.coolsculpting-four-up__cell {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+.coolsculpting-four-up__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ——— Why Lifescc ——— */
+.coolsculpting-why-lifescc {
+  width: 100%;
+  text-align: start;
+  color-scheme: light;
+  background: #eceff2;
+}
+
+.coolsculpting-why-lifescc__shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 7vw, 4.5rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-why-lifescc__title {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 2.75vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.coolsculpting-why-lifescc__p {
+  margin: 0 0 1.15rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.045rem);
+  line-height: 1.72;
+  color: #374151;
+}
+
+.coolsculpting-why-lifescc__p:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Two-column YouTube embeds ——— */
+.coolsculpting-videos {
+  width: 100%;
+  background: #ffffff;
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-videos__shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-videos__row {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .coolsculpting-videos__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.coolsculpting-videos__embed {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f172a;
+  aspect-ratio: 16 / 9;
+}
+
+.coolsculpting-videos__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ——— Our Certification ——— */
+.coolsculpting-certification {
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+  color-scheme: light;
+}
+
+.coolsculpting-certification__shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-certification__header {
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.coolsculpting-certification__title {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 2.75vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+/* Heading → rule + leaf icon → certificates (no duplicate raster under title) */
+.coolsculpting-certification__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto;
+}
+
+.coolsculpting-certification__divider-line {
+  flex: 1;
+  height: 1px;
+  min-width: 1.5rem;
+  background: #9ca3af;
+}
+
+.coolsculpting-certification__divider-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coolsculpting-certification__divider-svg {
+  display: block;
+  width: clamp(2.25rem, 5vw, 2.75rem);
+  height: auto;
+}
+
+.coolsculpting-certification__grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+  text-align: start;
+}
+
+@media (min-width: 768px) {
+  .coolsculpting-certification__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.coolsculpting-certification__figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 14px 32px rgba(15, 23, 42, 0.1);
+}
+
+.coolsculpting-certification__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ——— Our Process (step rail + tabs) ——— */
+.coolsculpting-process {
+  width: 100%;
+  background: #f8fafc;
+  text-align: center;
+  color-scheme: light;
+}
+
+.coolsculpting-process__shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-process__header {
+  margin-bottom: clamp(1.85rem, 4vw, 2.65rem);
+}
+
+.coolsculpting-process__title {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 2.75vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.coolsculpting-process__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto;
+}
+
+.coolsculpting-process__divider-line {
+  flex: 1;
+  height: 1px;
+  min-width: 1.5rem;
+  background: #9ca3af;
+}
+
+.coolsculpting-process__divider-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coolsculpting-process__divider-svg {
+  display: block;
+  width: clamp(2.25rem, 5vw, 2.75rem);
+  height: auto;
+}
+
+.coolsculpting-process__slider {
+  position: relative;
+  width: 100%;
+  margin-bottom: clamp(1.75rem, 4vw, 2.25rem);
+  padding-top: 0.25rem;
+}
+
+/* Horizontal rail between first and last step centres; width scales with --process-step-count (default 5) */
+.coolsculpting-process__rail {
+  position: absolute;
+  left: calc(100% / (2 * var(--process-step-count, 5)));
+  right: calc(100% / (2 * var(--process-step-count, 5)));
+  top: 1.65rem;
+  height: 4px;
+  pointer-events: none;
+}
+
+@media (max-width: 520px) {
+  .coolsculpting-process__rail {
+    left: calc(100% / (2 * var(--process-step-count, 5)));
+    right: calc(100% / (2 * var(--process-step-count, 5)));
+    top: 1.45rem;
+  }
+}
+
+.coolsculpting-process__rail-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.coolsculpting-process__rail-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(100% * var(--coolsculpt-process-progress, 0));
+  border-radius: 999px;
+  background: linear-gradient(90deg, #15803d 0%, #0a4a24 100%);
+  transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coolsculpting-process__tabs {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--process-step-count, 5), minmax(0, 1fr));
+  gap: clamp(0.35rem, 2vw, 0.75rem);
+  align-items: start;
+  width: 100%;
+}
+
+.coolsculpting-process__tab-cell {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.coolsculpting-process__tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: #64748b;
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.coolsculpting-process__tab-btn:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.coolsculpting-process__tab-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.coolsculpting-process__tab-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.35rem, 5.5vw, 2.85rem);
+  height: clamp(2.35rem, 5.5vw, 2.85rem);
+  border-radius: 50%;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #475569;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.coolsculpting-process__tab-btn--active .coolsculpting-process__tab-num {
+  color: #ffffff;
+  background: #0a4a24;
+  border-color: #0a4a24;
+  box-shadow:
+    0 2px 8px rgba(10, 74, 36, 0.35),
+    0 0 0 3px rgba(21, 128, 61, 0.22);
+}
+
+.coolsculpting-process__tab-btn--active {
+  color: #0a4a24;
+}
+
+.coolsculpting-process__tab-label {
+  font-size: clamp(0.65rem, 1.8vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coolsculpting-process__panel {
+  text-align: start;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(1.35rem, 3vw, 1.75rem) clamp(1.15rem, 3vw, 1.5rem);
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.06);
+  animation: coolsculpting-process-panel-in 0.48s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.coolsculpting-process__panel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin: 0 0 0.65rem;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #0a4a24;
+  box-shadow: inset 0 0 0 1px rgba(21, 128, 61, 0.2);
+}
+
+.coolsculpting-process__panel-icon-svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: block;
+}
+
+.coolsculpting-process__panel-icon-img {
+  width: 1.9rem;
+  height: 1.9rem;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes coolsculpting-process-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coolsculpting-process__panel-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.coolsculpting-process__panel-body {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.25vw, 1.03rem);
+  line-height: 1.72;
+  color: #4b5563;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coolsculpting-process__rail-fill {
+    transition-duration: 0.08s;
+  }
+
+  .coolsculpting-process__panel {
+    animation-duration: 0.2s;
+  }
+}
+
+/* ——— FAQ section ——— */
+.coolsculpting-faq {
+  width: 100%;
+  background: linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 45%, #ffffff 100%);
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-faq__shell {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(2.15rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 3.5rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-faq__header {
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.coolsculpting-faq__title {
+  margin: 0;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.coolsculpting-faq__list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.coolsculpting-faq__item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  overflow: clip;
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.coolsculpting-faq__item--open {
+  border-color: #bbf7d0;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.coolsculpting-faq__item-heading {
+  margin: 0;
+}
+
+.coolsculpting-faq__trigger {
+  width: 100%;
+  margin: 0;
+  padding: 1rem 1rem 1rem 1.1rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font: inherit;
+  text-align: start;
+}
+
+.coolsculpting-faq__question {
+  font-size: clamp(0.98rem, 1.25vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+.coolsculpting-faq__chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  color: #0a4a24;
+  background: #ecfdf5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.coolsculpting-faq__chevron svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
+}
+
+.coolsculpting-faq__item--open .coolsculpting-faq__chevron {
+  transform: rotate(180deg);
+}
+
+.coolsculpting-faq__trigger:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: -2px;
+}
+
+.coolsculpting-faq__panel-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coolsculpting-faq__item--open .coolsculpting-faq__panel-wrap {
+  grid-template-rows: 1fr;
+}
+
+.coolsculpting-faq__panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.coolsculpting-faq__answer {
+  margin: 0;
+  padding: 0 1.1rem 1rem;
+  font-size: clamp(0.93rem, 1.2vw, 1.01rem);
+  line-height: 1.7;
+  color: #475569;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coolsculpting-faq__item,
+  .coolsculpting-faq__chevron,
+  .coolsculpting-faq__panel-wrap {
+    transition-duration: 0.08s;
+  }
+}
+
+/* ——— Advantages section ——— */
+.coolsculpting-advantages {
+  width: 100%;
+  background: #ffffff;
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-advantages__shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.2rem, 5vw, 3.1rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 3.6rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-advantages__intro {
+  margin-bottom: clamp(1.15rem, 3vw, 1.75rem);
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.coolsculpting-advantages__grid {
+  display: grid;
+  gap: clamp(1.35rem, 4vw, 2.4rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .coolsculpting-advantages__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: stretch;
+  }
+}
+
+.coolsculpting-advantages__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f5f9;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.07),
+    0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.coolsculpting-advantages__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .coolsculpting-advantages__img {
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+
+.coolsculpting-advantages__content {
+  min-width: 0;
+}
+
+.coolsculpting-advantages__title {
+  margin: 0 0 0.45rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.coolsculpting-advantages__tagline {
+  margin: 0 0 0.95rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  line-height: 1.6;
+  font-weight: 600;
+  color: #0a4a24;
+}
+
+.coolsculpting-advantages__subheading {
+  margin: 1.25rem 0 0.55rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.coolsculpting-advantages__p {
+  margin: 0;
+  font-size: clamp(0.94rem, 1.25vw, 1.03rem);
+  line-height: 1.72;
+  color: #4b5563;
+}
+
+.coolsculpting-advantages__cards {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.coolsculpting-advantages__cards + .coolsculpting-advantages__subheading {
+  margin-top: 1.35rem;
+}
+
+.coolsculpting-advantages__card {
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.coolsculpting-advantages__card-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(0.96rem, 1.35vw, 1.06rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.coolsculpting-advantages__card-body {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.15vw, 0.97rem);
+  line-height: 1.68;
+  color: #475569;
+}
+
+/* ——— Appointment form section ——— */
+.coolsculpting-appointment {
+  width: 100%;
+  background: #ffffff;
+  text-align: start;
+  color-scheme: light;
+}
+
+.coolsculpting-appointment__shell {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2.15rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 6vw, 3.8rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-appointment__title {
+  margin: 0 0 0.55rem;
+  text-align: center;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.coolsculpting-appointment__lead {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.35vw, 1.03rem);
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.coolsculpting-appointment__form {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+@media (min-width: 768px) {
+  .coolsculpting-appointment__form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+}
+
+.coolsculpting-appointment__field {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+.coolsculpting-appointment__field--full {
+  grid-column: 1 / -1;
+}
+
+.coolsculpting-appointment__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.coolsculpting-appointment__input,
+.coolsculpting-appointment__textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0.62rem 0.72rem;
+}
+
+.coolsculpting-appointment__textarea {
+  resize: vertical;
+  min-height: 6.5rem;
+}
+
+.coolsculpting-appointment__input:focus-visible,
+.coolsculpting-appointment__textarea:focus-visible {
+  outline: 2px solid rgba(10, 74, 36, 0.28);
+  border-color: #15803d;
+}
+
+.coolsculpting-appointment__error {
+  margin: 0;
+  grid-column: 1 / -1;
+  color: #b91c1c;
+  font-size: 0.88rem;
+}
+
+.coolsculpting-appointment__submit-wrap {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.coolsculpting-appointment__submit {
+  border: 1.5px solid #0a4a24;
+  background: #0a4a24;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.63rem 1.25rem;
+  font-family: var(--sans, 'Poppins', system-ui, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.coolsculpting-appointment__submit:hover {
+  background: #08381c;
+  border-color: #08381c;
+}
+
+.coolsculpting-appointment__submit:active {
+  transform: scale(0.98);
+}
+
+.coolsculpting-appointment__submit:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+/* Booking strip: photo = full viewport half (flush right), form inset = advantages figure left edge */
+/* Outer .contact-us-page-wrap defines --contact-us-bg-image so the photo column inherits it */
+.coolsculpting-page__book-appt {
+  box-sizing: border-box;
+}
+
+.coolsculpting-page__book-appt .coolsculpting-book-appt__band.contact-us-page-wrap {
+  width: 100%;
+}
+
+.coolsculpting-book-appt__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+}
+
+.coolsculpting-book-appt__form-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(2rem, 5vw, 3.25rem);
+  padding-bottom: clamp(2rem, 5vw, 3.25rem);
+  box-sizing: border-box;
+}
+
+.coolsculpting-book-appt__visual-col {
+  position: relative;
+  min-width: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.coolsculpting-page__book-appt .contact-us-page-wrap.contact-us-page-wrap--book {
+  width: 100%;
+  min-height: 0;
+}
+
+.coolsculpting-page__book-appt .contact-us-page-wrap::before {
+  display: none;
+}
+
+.coolsculpting-page__book-appt .book-appointment-page {
+  --contact-us-nav-clearance: 0;
+  min-height: 0;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.coolsculpting-page__book-appt .coolsculpting-book-appt__form-shell {
+  width: 100%;
+  min-height: 0;
+}
+
+.coolsculpting-page__book-appt .book-appointment-page__form-inner {
+  align-self: stretch;
+  padding-top: 0;
+  padding-bottom: clamp(0.35rem, 1.25vw, 0.65rem);
+}
+
+@media (min-width: 900px) {
+  .coolsculpting-book-appt__layout {
+    grid-template-columns: minmax(0, 1fr) 50vw;
+    align-items: stretch;
+    min-height: clamp(380px, 52vh, 640px);
+  }
+
+  /* Matches .coolsculpting-advantages__shell: centered 1180px band + horizontal padding */
+  .coolsculpting-book-appt__form-col {
+    padding-left: calc(max(0px, (100vw - 1180px) / 2) + clamp(1rem, 4vw, 2rem));
+    padding-right: clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+  }
+
+  .coolsculpting-book-appt__visual-col {
+    min-height: clamp(380px, 52vh, 640px);
+  }
+
+  /* Fill right-hand 50vw column edge-to-edge (not constrained by 1180px shell) */
+  .coolsculpting-page__book-appt .coolsculpting-book-appt__photo-fullbleed.book-appointment-page__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background-image: var(--contact-us-bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 22%;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .coolsculpting-book-appt__layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coolsculpting-book-appt__visual-col {
+    order: 1;
+    min-height: clamp(240px, 42vw, 360px);
+    width: 100%;
+  }
+
+  .coolsculpting-book-appt__form-col {
+    order: 2;
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+    padding-top: clamp(1.25rem, 4vw, 1.75rem);
+    padding-bottom: clamp(2rem, 5vw, 3.25rem);
+    box-sizing: border-box;
+  }
+
+  .coolsculpting-page__book-appt .coolsculpting-book-appt__photo-fullbleed.book-appointment-page__photo {
+    width: 100%;
+    min-height: clamp(240px, 42vw, 360px);
+    background-image: var(--contact-us-bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+  }
+}
+
+/* Override standalone book page fixed viewport photo when embedded here */
+@media (min-width: 992px) {
+  .coolsculpting-page__book-appt .coolsculpting-book-appt__photo-fullbleed.book-appointment-page__photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
+}
+
+.coolsculpting-page__book-appt .book-appointment-page__select:disabled {
+  color: #111827;
+  opacity: 1;
+  cursor: default;
+}

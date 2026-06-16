@@ -1,5 +1,6 @@
 .page-main {
   flex: 1;
   width: 100%;
-  background: #fff;
+  min-height: 0;
+  background: transparent;
 }

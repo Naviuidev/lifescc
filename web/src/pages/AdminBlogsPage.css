@@ -1,0 +1,164 @@
+/* Blog list — slug chip + delete flow (table base styles from AdminSlotsPage.css) */
+
+.admin-blogs-page .admin-data-table {
+  min-width: 1080px;
+}
+
+.admin-blogs__slug {
+  display: inline-block;
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  padding: 0.25rem 0.5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #374151;
+  font-size: 0.78rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.admin-blogs__badge-draft {
+  background-color: var(--bs-secondary-bg, #e9ecef) !important;
+  color: var(--bs-secondary-color, #495057) !important;
+}
+
+.admin-blogs__delete-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-blogs__delete-btn svg {
+  display: block;
+}
+
+/* Confirm delete — same stacking as BookSlotModal */
+.admin-blogs-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.admin-blogs-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(8, 6, 13, 0.45);
+  cursor: pointer;
+}
+
+.admin-blogs-modal-dialog {
+  position: relative;
+  width: min(100%, 420px);
+  max-height: min(90vh, 520px);
+  overflow: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  text-align: left;
+  color: #111827;
+  color-scheme: light;
+}
+
+.admin-blogs-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid #e5e4e7;
+}
+
+.admin-blogs-modal-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.admin-blogs-modal-close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: #f4f3ec;
+  color: #111827;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-blogs-modal-body {
+  padding: 1.1rem 1.1rem 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.admin-blogs-modal-body strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.admin-blogs-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+/* Toolbar: primary actions left, refresh stays right */
+.admin-blog-page__toolbar-top {
+  justify-content: flex-start;
+}
+
+.admin-blog-page__toolbar-top .admin-blog-page__refresh {
+  margin-left: auto;
+}
+
+.admin-blog-page__toolbar-search {
+  justify-content: flex-start;
+}
+
+@media (max-width: 720px) {
+  .admin-blog-page__toolbar-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-blog-page__toolbar-search .admin-slots__search-wrap {
+    max-width: none;
+  }
+
+  .admin-blog-page__toolbar-search .admin-blog-page__quick-filters {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* Message cell truncation (submissions table) */
+.admin-blogs-data__msg {
+  max-width: 14rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+.admin-blog-submissions-page .admin-data-table {
+  min-width: 1080px;
+}

@@ -1,27 +1,23 @@
-import { useCallback, useEffect, useState } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import mainLogo from '../assets/main-logo1.png'
 import NavbarTopBar from './NavbarTopBar.jsx'
+import { PROGRAM_DROPDOWN_ITEMS } from '../constants/programDropdownItems.js'
+import { WEIGHT_DROPDOWN_ITEMS } from '../constants/weightTreatments.js'
+import { SKIN_DROPDOWN_ITEMS } from '../constants/skinTreatments.js'
+import { HAIR_DROPDOWN_ITEMS } from '../constants/navbarDropdownItems.js'
 import './Navbar.css'
 
-/** Main nav is visible when scroll is within this distance of the top; hidden when scrolled further down */
-const SCROLL_TOP_SHOW_MAX = 80
+/** Pixels of scroll delta to treat as intentional direction (ignore jitter). */
+const SCROLL_DIRECTION_THRESHOLD = 6
+/** Near top of page: always show main nav. */
+const SCROLL_TOP_ALWAYS_SHOW = 32
 
 const dropdownItems = {
-  weight: [
-    { label: 'Weight loss programs', href: '#weight-programs' },
-    { label: 'BMI & nutrition', href: '#bmi' },
-    { label: 'Body contouring', href: '#body' },
-  ],
-  skin: [
-    { label: 'Facial treatments', href: '#facial' },
-    { label: 'Acne & pigmentation', href: '#acne' },
-    { label: 'Anti-aging', href: '#anti-aging' },
-  ],
-  hair: [
-    { label: 'Hair loss treatment', href: '#hair-loss' },
-    { label: 'PRP hair therapy', href: '#prp-hair' },
-    { label: 'Hair transplant', href: '#transplant' },
-  ],
+  programs: PROGRAM_DROPDOWN_ITEMS,
+  weight: WEIGHT_DROPDOWN_ITEMS,
+  skin: SKIN_DROPDOWN_ITEMS,
+  hair: HAIR_DROPDOWN_ITEMS,
 }
 
 function ChevronIcon({ className = '' }) {
@@ -66,11 +62,21 @@ function DropdownMenu({ id, label, items }) {
       </a>
       <ul className="dropdown-menu" aria-labelledby={`${id}Dropdown`}>
         {items.map((item) => (
-          <li key={item.href}>
-            <a className="dropdown-item" href={item.href}>
-              {item.label}
-            </a>
-          </li>
+          <Fragment key={item.label}>
+            <li>
+              <a
+                className={`dropdown-item${item.featured ? ' dropdown-item--featured' : ''}`}
+                href={item.href}
+              >
+                {item.label}
+              </a>
+            </li>
+            {item.dividerAfter ? (
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+            ) : null}
+          </Fragment>
         ))}
       </ul>
     </li>
@@ -100,11 +106,20 @@ function MobileAccordionSection({ id, label, items, isOpen, onToggle, onNavigate
       >
         <ul className="mobile-nav-accordion__list">
           {items.map((item) => (
-            <li key={item.href}>
-              <a href={item.href} className="mobile-nav-accordion__link" onClick={onNavigate}>
-                {item.label}
-              </a>
-            </li>
+            <Fragment key={item.label}>
+              <li>
+                <a
+                  href={item.href}
+                  className={`mobile-nav-accordion__link${item.featured ? ' mobile-nav-accordion__link--featured' : ''}`}
+                  onClick={onNavigate}
+                >
+                  {item.label}
+                </a>
+              </li>
+              {item.dividerAfter ? (
+                <li className="mobile-nav-accordion__divider" aria-hidden />
+              ) : null}
+            </Fragment>
           ))}
         </ul>
       </div>
@@ -116,6 +131,7 @@ export default function Navbar() {
   const [mainNavVisible, setMainNavVisible] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileAccordion, setMobileAccordion] = useState(null)
+  const lastScrollYRef = useRef(0)
 
   const closeMobile = useCallback(() => {
     setMobileMenuOpen(false)
@@ -124,13 +140,31 @@ export default function Navbar() {
 
   const openMobile = useCallback(() => setMobileMenuOpen(true), [])
 
+  /**
+   * Hide main nav when scrolling down; show when scrolling up (with fade/slide in CSS).
+   * Near the top of the page, the bar stays visible.
+   */
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY || document.documentElement.scrollTop
-      const show = y <= SCROLL_TOP_SHOW_MAX
-      setMainNavVisible(show)
-      document.body.classList.toggle('main-nav-reveal-active', show)
+      const last = lastScrollYRef.current
+      const delta = y - last
+
+      if (y <= SCROLL_TOP_ALWAYS_SHOW) {
+        setMainNavVisible(true)
+        document.body.classList.add('main-nav-reveal-active')
+      } else if (delta > SCROLL_DIRECTION_THRESHOLD) {
+        setMainNavVisible(false)
+        document.body.classList.remove('main-nav-reveal-active')
+      } else if (delta < -SCROLL_DIRECTION_THRESHOLD) {
+        setMainNavVisible(true)
+        document.body.classList.add('main-nav-reveal-active')
+      }
+
+      lastScrollYRef.current = y
     }
+
+    lastScrollYRef.current = window.scrollY || 0
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
@@ -170,20 +204,20 @@ export default function Navbar() {
       </div>
 
       <nav
-        className={`main-nav-reveal navbar navbar-expand-lg navbar-shell ${mainNavVisible ? 'main-nav-reveal--visible' : ''}`}
+        className={`main-nav-reveal navbar navbar-expand-lg navbar-shell${mainNavVisible ? ' main-nav-reveal--visible' : ''}`}
         aria-label="Primary"
         aria-hidden={!mainNavVisible}
       >
         <div className="navbar-shell-inner navbar-shell-inner--main">
           <div className="navbar-glass-pill">
             <div className="container-fluid navbar-inner px-3 px-lg-4 d-flex align-items-center flex-wrap flex-lg-nowrap gap-2">
-              <a className="navbar-brand d-flex align-items-center" href="/">
+              <Link className="navbar-brand d-flex align-items-center" to="/">
                 <img
                   src={mainLogo}
                   alt="Lifescc"
                   className="navbar-logo"
                 />
-              </a>
+              </Link>
 
               <button
                 className={`navbar-toggler-animate d-lg-none ${mobileMenuOpen ? 'is-open' : ''}`}
@@ -204,40 +238,41 @@ export default function Navbar() {
               >
                 <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                   <li className="nav-item">
-                    <a className="nav-link" href="#about">
+                    <Link className="nav-link" to="/about-us">
                       About
-                    </a>
+                    </Link>
                   </li>
 
+                  <DropdownMenu id="programs" label="Programs" items={dropdownItems.programs} />
                   <DropdownMenu id="weight" label="Weight" items={dropdownItems.weight} />
                   <DropdownMenu id="skin" label="Skin" items={dropdownItems.skin} />
                   <DropdownMenu id="hair" label="Hair" items={dropdownItems.hair} />
 
                   <li className="nav-item">
-                    <a className="nav-link" href="#book">
+                    <Link className="nav-link" to="/book-an-appointment">
                       Book appointment
-                    </a>
+                    </Link>
                   </li>
 
                   <li className="nav-item">
-                    <a className="nav-link" href="#testimonials">
+                    <Link className="nav-link" to="/testimonials">
                       Testimonials
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#blogs">
+                    <Link className="nav-link" to="/blog">
                       Blogs
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#contact">
+                    <Link className="nav-link" to="/contact-us">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#franchise">
+                    <Link className="nav-link" to="/franchise">
                       Franchise
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -260,8 +295,8 @@ export default function Navbar() {
       >
         <div className="mobile-nav-drawer__inner">
           <div className="mobile-nav-drawer__head">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="mobile-nav-drawer__brand"
               onClick={closeMobile}
             >
@@ -270,7 +305,7 @@ export default function Navbar() {
                 alt="Lifescc"
                 className="mobile-nav-drawer__logo"
               />
-            </a>
+            </Link>
             <button
               type="button"
               className="mobile-nav-drawer__close"
@@ -286,11 +321,19 @@ export default function Navbar() {
           </div>
           <ul className="mobile-nav-drawer__list">
             <li>
-              <a href="#about" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/about-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 About
-              </a>
+              </Link>
             </li>
 
+            <MobileAccordionSection
+              id="programs"
+              label="Programs"
+              items={dropdownItems.programs}
+              isOpen={mobileAccordion === 'programs'}
+              onToggle={setMobileAccordion}
+              onNavigate={closeMobile}
+            />
             <MobileAccordionSection
               id="weight"
               label="Weight"
@@ -317,29 +360,29 @@ export default function Navbar() {
             />
 
             <li>
-              <a href="#book" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/book-an-appointment" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Book appointment
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#testimonials" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/testimonials" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Testimonials
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#blogs" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/blog" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Blogs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#contact" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/contact-us" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#franchise" className="mobile-nav-drawer__link" onClick={closeMobile}>
+              <Link to="/franchise" className="mobile-nav-drawer__link" onClick={closeMobile}>
                 Franchise
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

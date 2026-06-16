@@ -3,3 +3,4 @@ vendor/
 .env
 dist/
 .DS_Store
+deploy/test/output/

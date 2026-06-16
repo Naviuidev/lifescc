@@ -1,0 +1,201 @@
+/* Centered intro + leaf (matches process divider motif) */
+.figure-correction-lead {
+  width: 100%;
+  background: #ffffff;
+  color: #111827;
+  text-align: center;
+  color-scheme: light;
+}
+
+.figure-correction-lead__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 3.75rem);
+  box-sizing: border-box;
+}
+
+.figure-correction-lead__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.figure-correction-lead__divider-line {
+  flex: 1;
+  height: 1px;
+  min-width: 1.5rem;
+  background: #9ca3af;
+}
+
+.figure-correction-lead__divider-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figure-correction-lead__divider-svg {
+  display: block;
+  width: clamp(2rem, 4.5vw, 2.5rem);
+  height: auto;
+}
+
+.figure-correction-lead__title {
+  margin: 0 auto clamp(1rem, 2.5vw, 1.35rem);
+  max-width: 48rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+  text-align: center;
+}
+
+.figure-correction-lead__p {
+  margin: 0 auto;
+  max-width: 52rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.03rem);
+  line-height: 1.72;
+  color: #374151;
+  text-align: center;
+}
+
+/* 4 + 8 two-column — align tops (What is Figure Correction?) */
+.figure-correction-split .coolsculpting-treatment__grid {
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .figure-correction-split .coolsculpting-treatment__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}
+
+/* Advantages: 8 + 4 */
+.figure-correction-advantages__title {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+  text-align: center;
+}
+
+.figure-correction-advantages__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .figure-correction-advantages__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.figure-correction-advantages__list {
+  margin: 0 0 1.15rem;
+  padding-left: 1.25rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.03rem);
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.figure-correction-advantages__list li {
+  margin-bottom: 0.55rem;
+}
+
+.figure-correction-advantages__list li:last-child {
+  margin-bottom: 0;
+}
+
+.figure-correction-advantages__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.figure-correction-advantages__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Trust strip (FDA / no side effects / …) */
+.figure-correction-trust-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.5rem, 2vw, 1rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .figure-correction-trust-strip__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.figure-correction-trust-strip__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 0.95rem;
+  min-height: 3.75rem;
+  color: #ffffff;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.figure-correction-trust-strip__item--fda {
+  background: #6fa382;
+}
+
+.figure-correction-trust-strip__item--safe {
+  background: #5b8fc7;
+}
+
+.figure-correction-trust-strip__item--time {
+  background: #c27d3a;
+}
+
+.figure-correction-trust-strip__item--nonsurg {
+  background: #8b6fb8;
+}
+
+.figure-correction-trust-strip__icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+}
+
+.figure-correction-trust-strip__icon {
+  display: block;
+  color: currentColor;
+}
+
+.figure-correction-trust-strip__label {
+  font-family: var(--sans, 'Poppins', system-ui, sans-serif);
+  font-weight: 600;
+  font-size: clamp(0.72rem, 1.35vw, 0.9rem);
+  line-height: 1.28;
+  letter-spacing: 0.015em;
+}

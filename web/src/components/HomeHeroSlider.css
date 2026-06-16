@@ -1,0 +1,408 @@
+.home-hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  /* Full viewport behind floating navbar (nav sits above via z-index) */
+  min-height: max(100svh, 20rem);
+  overflow: hidden;
+  border-radius: 0;
+  margin-bottom: clamp(1.25rem, 4vw, 2.5rem);
+  isolation: isolate;
+  box-sizing: border-box;
+  background-color: #faf6f2;
+}
+
+@supports (height: 100dvh) {
+  .home-hero {
+    min-height: max(100dvh, 20rem);
+  }
+}
+
+.home-hero__backgrounds {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 0.85s ease,
+    transform 1.1s ease;
+}
+
+/* Wide banner art: full bitmap width visible (no horizontal crop); band below uses .home-hero bg */
+.home-hero__bg--fit-width {
+  background-size: 100% auto;
+  background-position: left top;
+}
+
+@media (max-width: 640px) {
+  /* Face slide — keep face in frame (portrait crop) */
+  .home-hero__bg--focus-face.home-hero__bg--fit-width {
+    background-size: cover;
+    background-position: 32% 18%;
+  }
+
+  /* Treatment / device + practitioner */
+  .home-hero__bg--focus-treatment {
+    background-size: cover;
+    background-position: 36% 48%;
+  }
+
+  /* Main subject (body / measurement area) */
+  .home-hero__bg--focus-subject {
+    background-size: cover;
+    background-position: 24% 42%;
+  }
+}
+
+.home-hero__bg--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__bg {
+    transition: none;
+    transform: none;
+  }
+
+  .home-hero__bg--active {
+    transform: none;
+  }
+}
+
+/* Readability: subtle gradient + optional tone per slide variant */
+.home-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-hero__scrim--light {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 248, 242, 0.15) 0%,
+    rgba(255, 250, 245, 0.55) 42%,
+    rgba(255, 252, 248, 0.88) 58%,
+    rgba(255, 253, 250, 0.95) 100%
+  );
+}
+
+.home-hero__scrim--dark {
+  background: linear-gradient(
+    105deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.18) 38%,
+    rgba(0, 0, 0, 0.5) 72%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  min-height: inherit;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: max(
+    clamp(1.75rem, 5vw, 3.25rem),
+    var(--home-nav-clearance, calc(var(--navbar-top-icons-h, 76px) + 5.25rem))
+  );
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.75rem, 5vw, 3.25rem);
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.home-hero__content {
+  max-width: min(34rem, 100%);
+  text-align: right;
+  animation: home-hero-enter 0.55s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__content {
+    animation: none;
+  }
+}
+
+@keyframes home-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero__content--light .home-hero__tagline {
+  color: #4a3728;
+}
+
+.home-hero__content--light .home-hero__heading {
+  color: #1c1917;
+}
+
+.home-hero__content--light .home-hero__para {
+  color: #44403c;
+}
+
+.home-hero__content--dark .home-hero__tagline {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.home-hero__content--dark .home-hero__heading {
+  color: #fff;
+}
+
+.home-hero__content--dark .home-hero__para {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.home-hero__tagline {
+  margin: 0 0 0.35rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.home-hero__heading {
+  margin: 0 0 0.85rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 3.1vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.home-hero__para {
+  margin: 0 0 0.5rem;
+  font-family: var(--sans, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(0.88rem, 1.55vw, 1rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.home-hero__para:last-of-type {
+  margin-bottom: 1.15rem;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.home-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.35rem;
+  border-radius: 999px;
+  font-family: var(--sans, 'Poppins', system-ui, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.home-hero__content--light .home-hero__btn--primary {
+  background: #0a4a24;
+  color: #fff;
+  border: 1.5px solid #0a4a24;
+}
+
+.home-hero__content--light .home-hero__btn--primary:hover {
+  background: #08381c;
+  border-color: #08381c;
+}
+
+.home-hero__content--light .home-hero__btn--secondary {
+  background: transparent;
+  color: #0a4a24;
+  border: 1.5px solid rgba(10, 74, 36, 0.45);
+}
+
+.home-hero__content--light .home-hero__btn--secondary:hover {
+  background: rgba(10, 74, 36, 0.08);
+}
+
+.home-hero__content--dark .home-hero__btn--primary {
+  background: #fff;
+  color: #0f172a;
+  border: 1.5px solid #fff;
+}
+
+.home-hero__content--dark .home-hero__btn--primary:hover {
+  background: #f1f5f9;
+}
+
+.home-hero__content--dark .home-hero__btn--secondary {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+}
+
+.home-hero__content--dark .home-hero__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.home-hero__btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.home-hero__btn:active {
+  transform: scale(0.98);
+}
+
+.home-hero__controls {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.35rem;
+}
+
+.home-hero__arrow {
+  pointer-events: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.35);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-hero__arrow:hover {
+  background: rgba(15, 23, 42, 0.55);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.home-hero__arrow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.home-hero__dots {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: clamp(0.85rem, 2.5vw, 1.35rem);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.home-hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.home-hero__dot--active {
+  transform: scale(1.25);
+}
+
+.home-hero[data-variant='dark'] .home-hero__dot {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.home-hero[data-variant='dark'] .home-hero__dot--active {
+  background: #fff;
+}
+
+.home-hero[data-variant='light'] .home-hero__dot {
+  background: rgba(28, 25, 23, 0.28);
+}
+
+.home-hero[data-variant='light'] .home-hero__dot--active {
+  background: #0a4a24;
+}
+
+@media (max-width: 640px) {
+  .home-hero__inner {
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: clamp(2.75rem, 10vw, 3.5rem);
+  }
+
+  .home-hero__content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .home-hero__actions {
+    justify-content: center;
+  }
+
+  .home-hero__scrim--light {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 252, 248, 0.2) 0%,
+      rgba(255, 250, 245, 0.75) 45%,
+      rgba(255, 253, 250, 0.96) 100%
+    );
+  }
+
+  .home-hero__scrim--dark {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.45) 55%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+  }
+
+  .home-hero__controls {
+    padding: 0 0.15rem;
+  }
+
+  .home-hero__arrow {
+    width: 2.15rem;
+    height: 2.15rem;
+    font-size: 1.25rem;
+  }
+}

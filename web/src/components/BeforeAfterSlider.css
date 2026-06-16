@@ -1,0 +1,137 @@
+.ba-slider-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.ba-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: min(420px, 70vw);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e5e7eb;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+
+.ba-slider--portrait {
+  aspect-ratio: 3 / 4;
+  max-height: min(520px, 85vw);
+}
+
+@media (min-width: 992px) {
+  .ba-slider {
+    aspect-ratio: 1 / 1;
+    max-height: none;
+  }
+
+  .ba-slider--portrait {
+    aspect-ratio: 3 / 4;
+    max-height: min(560px, 52vh);
+  }
+}
+
+.ba-slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.ba-slider__img--after {
+  z-index: 0;
+}
+
+.ba-slider__img--before {
+  z-index: 1;
+}
+
+.ba-slider__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: #15803d;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ba-slider__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #15803d;
+  cursor: ew-resize;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 14px rgba(21, 128, 61, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.ba-slider__handle:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 4px 18px rgba(21, 128, 61, 0.5);
+}
+
+.ba-slider__handle:focus-visible {
+  outline: 2px solid #166534;
+  outline-offset: 3px;
+}
+
+.ba-slider__handle-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #fff;
+}
+
+.ba-slider__tri {
+  display: block;
+  flex-shrink: 0;
+}
+
+.ba-slider__tag {
+  position: absolute;
+  bottom: 10px;
+  z-index: 3;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #374151;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.ba-slider__tag--before {
+  left: 10px;
+}
+
+.ba-slider__tag--after {
+  right: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ba-slider__handle:hover {
+    transform: translate(-50%, -50%);
+  }
+}

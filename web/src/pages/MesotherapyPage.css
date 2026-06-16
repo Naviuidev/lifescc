@@ -1,0 +1,110 @@
+.mesotherapy-page .meso-split .meso-split__shell {
+  max-width: 1180px;
+}
+
+.mesotherapy-page .meso-split__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .mesotherapy-page .meso-split--4-8 .meso-split__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+.mesotherapy-page .meso-split__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.mesotherapy-page .meso-split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mesotherapy-page .meso-split__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.mesotherapy-page .meso-intro__tail {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.mesotherapy-page .meso-intro__subheading {
+  margin: 1.2rem 0 0.7rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111827;
+}
+
+.mesotherapy-page .meso-how .meso-how__shell {
+  max-width: 1180px;
+}
+
+.mesotherapy-page .meso-how__row--8-4 {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .mesotherapy-page .meso-how__row--8-4 {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.mesotherapy-page .meso-how__copy-col {
+  min-width: 0;
+}
+
+.mesotherapy-page .meso-how__copy-col .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.mesotherapy-page .meso-how__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.mesotherapy-page .meso-how__figure-inner {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.mesotherapy-page .meso-how__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 899.98px) {
+  .mesotherapy-page .meso-how__row--reverse-mobile .meso-how__figure {
+    order: -1;
+  }
+}
+
+.mesotherapy-page .meso-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.mesotherapy-page .meso-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

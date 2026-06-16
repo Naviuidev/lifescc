@@ -1,0 +1,115 @@
+.anti-dandruff-page .ad-split .coolsculpting-treatment__shell {
+  max-width: 1180px;
+}
+
+.anti-dandruff-page .ad-split__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .anti-dandruff-page .ad-split--4-8 .ad-split__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+.anti-dandruff-page .ad-split__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.anti-dandruff-page .ad-split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.anti-dandruff-page .ad-split__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+/* Trust experts — 8+4 row with image, then full-width paragraph */
+.anti-dandruff-page .ad-experts .ad-experts__shell {
+  max-width: 1180px;
+}
+
+.anti-dandruff-page .ad-experts__row--8-4 {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .anti-dandruff-page .ad-experts__row--8-4 {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  }
+}
+
+.anti-dandruff-page .ad-experts__lead-col {
+  min-width: 0;
+}
+
+.anti-dandruff-page .ad-experts__lead-col .coolsculpting-treatment__title {
+  margin: 0;
+}
+
+.anti-dandruff-page .ad-experts__lead-col .coolsculpting-treatment__p {
+  margin-top: 0;
+}
+
+.anti-dandruff-page .ad-experts__lead-col .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+.anti-dandruff-page .ad-experts__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.anti-dandruff-page .ad-experts__figure-inner {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.anti-dandruff-page .ad-experts__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.anti-dandruff-page .ad-experts__tail {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.anti-dandruff-page .ad-experts__tail .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 899.98px) {
+  .anti-dandruff-page .ad-experts__row--reverse-mobile .ad-experts__figure {
+    order: -1;
+  }
+}
+
+/* Book strip */
+.anti-dandruff-page .ad-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.anti-dandruff-page .ad-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

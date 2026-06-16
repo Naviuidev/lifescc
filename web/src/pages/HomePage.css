@@ -1,0 +1,395 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+.home-page__main {
+  flex: 1;
+  width: 100%;
+  /* Hero sits under fixed nav (no white band); offset for overlay text is on .home-hero__inner */
+  --home-nav-clearance: calc(var(--navbar-top-icons-h, 76px) + 5.25rem);
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.home-page__hero-wrap {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ——— Happy clients (approved reviews) — vertical slider ——— */
+/* Background matches Contact Us (`ContactUsPage.css` --contact-us-bg-image + wash) */
+.happy-clients {
+  --happy-slide-h: clamp(15.5rem, 34vh, 22rem);
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 4vw, 2rem) clamp(2.25rem, 5vw, 4rem);
+}
+
+.happy-clients::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(
+      180deg,
+      rgba(240, 244, 249, 0.76) 0%,
+      rgba(240, 244, 249, 0.82) 40%,
+      rgba(240, 244, 249, 0.88) 100%
+    ),
+    var(
+      --contact-us-bg-image,
+      url('https://clevrblends.com/cdn/shop/articles/madison-lavern-4gcqRf3-f2I-unsplash_1_3050x3050.png?v=1752501671')
+    );
+  background-repeat: no-repeat;
+  background-position: top top;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+  pointer-events: none;
+}
+
+.happy-clients > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .happy-clients::before {
+    background-attachment: scroll, scroll;
+  }
+}
+
+.happy-clients__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.happy-clients__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #111827;
+  line-height: 1.15;
+}
+
+.happy-clients__lead {
+  margin: 0;
+  font-size: clamp(0.92rem, 1.5vw, 1.02rem);
+  line-height: 1.55;
+  color: #6b7280;
+  max-width: min(56ch, 100%);
+}
+
+.happy-clients__head {
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.happy-clients__slider-wrap .happy-clients__head {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.happy-clients__head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+/* Right column: heading, lead, and arrows share one centered column */
+.happy-clients__slider-wrap .happy-clients__head-row {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.happy-clients__head-text {
+  flex: 1 1 min(100%, 28rem);
+  min-width: 0;
+}
+
+.happy-clients__slider-wrap .happy-clients__head-text {
+  flex: none;
+  width: 100%;
+  max-width: min(42ch, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.happy-clients__head .happy-clients__title {
+  margin-bottom: 0.5rem;
+}
+
+.happy-clients__head .happy-clients__nav {
+  margin-top: 0;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.happy-clients__slider-wrap .happy-clients__head .happy-clients__nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: min(42ch, 100%);
+  margin-inline: auto;
+}
+
+.happy-clients__loading {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.happy-clients__layout {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media (max-width: 899.98px) {
+  .happy-clients__slider-wrap {
+    order: -1;
+  }
+}
+
+@media (min-width: 900px) {
+  .happy-clients__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 2.5rem 3.5rem;
+    align-items: start;
+  }
+}
+
+.happy-clients__form-col {
+  min-width: 0;
+  text-align: start;
+}
+
+.happy-clients__form-col .contact-us-page__card-head,
+.happy-clients__form-col .contact-us-form {
+  text-align: start;
+}
+
+.happy-clients__form-col .contact-us-form__label {
+  text-align: start;
+}
+
+.happy-clients__form-col .contact-us-form__field {
+  align-items: stretch;
+}
+
+.happy-clients__form-col .contact-us-form__legal {
+  text-align: center;
+}
+
+.happy-clients__form-card.contact-us-page__card {
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.08),
+    0 14px 28px -10px rgba(15, 23, 42, 0.12);
+}
+
+.happy-clients__nav {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+
+.happy-clients__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.happy-clients__nav-btn:hover {
+  border-color: #0a4a24;
+  color: #0a4a24;
+  background: rgba(10, 74, 36, 0.06);
+}
+
+.happy-clients__nav-btn:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: 2px;
+}
+
+.happy-clients__nav-btn:active {
+  transform: scale(0.96);
+}
+
+.happy-clients__nav-icon {
+  display: block;
+}
+
+.happy-clients__slider-wrap {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.happy-clients__viewport {
+  position: relative;
+  height: var(--happy-slide-h);
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.05),
+    0 18px 40px -12px rgba(15, 23, 42, 0.1);
+}
+
+.happy-clients__track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.33, 0.86, 0.28, 1);
+  transform: translateY(calc(var(--idx, 0) * -1 * var(--happy-slide-h)));
+}
+
+.happy-clients__track--no-motion {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .happy-clients__track {
+    transition: none;
+  }
+}
+
+.happy-clients__slide {
+  flex: 0 0 auto;
+  height: var(--happy-slide-h);
+  box-sizing: border-box;
+  padding: clamp(1.15rem, 3vw, 1.65rem) clamp(1.15rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  justify-content: flex-start;
+}
+
+.happy-clients__quote {
+  margin: 0;
+  line-height: 1.5;
+  color: #1f2937;
+  letter-spacing: -0.015em;
+}
+
+.happy-clients__meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+.happy-clients__meta-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.happy-clients__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(10, 74, 36, 0.12);
+}
+
+.happy-clients__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(145deg, rgba(10, 74, 36, 0.12) 0%, rgba(10, 74, 36, 0.2) 100%);
+  color: #0a4a24;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.happy-clients__name {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.happy-clients__service {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: #4b5563;
+}
+
+.happy-clients__stars {
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.happy-clients__star {
+  color: #e5e7eb;
+}
+
+.happy-clients__star--on {
+  color: #fbbf24;
+}
+
+.happy-clients__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.happy-clients__slider-wrap .happy-clients__dots {
+  margin-top: 0;
+}
+
+.happy-clients__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.happy-clients__dot--active {
+  background: #0a4a24;
+  transform: scale(1.35);
+}

@@ -1,0 +1,184 @@
+/* Hero — ban-color: contain, left; taller box + softer scrim on the left so art reads at full width */
+.skinlight-page.cryolipolysis-page.coolsculpting-page .skinlight-banner-hero.coolsculpting-hero.coolsculpting-hero--with-inline-form {
+  min-height: clamp(30rem, 72svh, 52rem);
+}
+
+.skinlight-page.coolsculpting-page .skinlight-banner-hero.coolsculpting-hero {
+  background-size: contain;
+  /* Nudge art slightly right so copy on the left of the banner asset clears the viewport edge */
+  background-position: clamp(0.75rem, 6vw, 3.25rem) center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.skinlight-page .skinlight-banner-hero__scrim.coolsculpting-hero__scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.18) 26%,
+    rgba(255, 255, 255, 0.55) 46%,
+    rgba(255, 255, 255, 0.88) 64%,
+    #ffffff 100%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .skinlight-page.coolsculpting-page .skinlight-banner-hero.coolsculpting-hero {
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+/* Intro */
+.skinlight-intro {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.skinlight-intro__shell {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skinlight-intro__title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.skinlight-intro__p {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+/* Methods — 8+4 then full-width Microdermabrasion */
+.skinlight-methods {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.skinlight-methods__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.skinlight-methods__top {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .skinlight-methods__top {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: center;
+  }
+}
+
+.skinlight-methods__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skinlight-methods__subheading {
+  margin: clamp(1.35rem, 2.8vw, 1.75rem) 0 0.5rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.08rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.skinlight-methods__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.skinlight-methods__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.skinlight-methods__wide {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  padding-top: clamp(1.75rem, 4vw, 2.25rem);
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  text-align: start;
+}
+
+.skinlight-methods__wide .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skinlight-methods__wide .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+/* Why Lifescc — Contact Us bg */
+.skinlight-why {
+  width: 100%;
+  color: #111827;
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+.skinlight-why__band.contact-us-page-wrap {
+  justify-content: center;
+  min-height: clamp(30rem, 54vh, 48rem);
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+.skinlight-why__inner {
+  max-width: min(46rem, 100%);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.skinlight-why__inner .coolsculpting-treatment__title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.skinlight-why__inner .coolsculpting-treatment__p {
+  text-align: start;
+}
+
+.skinlight-why__inner .coolsculpting-treatment__p a {
+  color: #15803d;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.skinlight-why__inner .coolsculpting-treatment__p a:hover {
+  color: #166534;
+}
+
+.skinlight-why__inner .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+/* Book strip */
+.skinlight-page .skinlight-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.skinlight-page .skinlight-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

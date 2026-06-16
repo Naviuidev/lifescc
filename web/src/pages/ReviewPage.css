@@ -1,0 +1,207 @@
+/* Hero + form layout (shared full-bleed bg from ContactUsPage.css — contact-us-page-wrap) */
+.review-page__hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-page__hero .contact-us-page__title {
+  text-align: center;
+}
+
+.review-page__hero-intro {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: min(42ch, 100%);
+}
+
+.review-page__form-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.review-portal__card {
+  background: #ffffff80;
+  border-radius: 18px;
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.06),
+    0 12px 28px -6px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.review-portal__field {
+  margin-bottom: 1.15rem;
+}
+
+.review-portal__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+.review-portal__req {
+  color: #2563eb;
+}
+
+.review-portal__label-hint {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.review-portal__wordcount {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.review-portal__wordcount[data-at-limit='true'] {
+  color: #0a4a24;
+  font-weight: 600;
+}
+
+.review-portal__stars {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.review-portal__star {
+  padding: 0.15rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #d1d5db;
+  line-height: 0;
+  transition: color 0.12s ease, transform 0.12s ease;
+}
+
+.review-portal__star:hover {
+  transform: scale(1.06);
+}
+
+.review-portal__star--on {
+  color: #fbbf24;
+}
+
+.review-portal__file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.review-portal__upload {
+  position: relative;
+}
+
+.review-portal__upload-zone {
+  width: 100%;
+  min-height: 120px;
+  border: 2px dashed #d1d5db;
+  border-radius: 14px;
+  background: #fafafa;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem;
+  font: inherit;
+  color: #6b7280;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.review-portal__upload-zone:hover {
+  border-color: #0a4a24;
+  background: rgba(10, 74, 36, 0.04);
+}
+
+.review-portal__upload-icon {
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #9ca3af;
+}
+
+.review-portal__upload-hint {
+  font-size: 0.8125rem;
+  text-align: center;
+  max-width: 16rem;
+}
+
+.review-portal__preview {
+  max-width: 100%;
+  max-height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.review-portal__input,
+.review-portal__textarea,
+.review-portal__select {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111827;
+}
+
+.review-portal__textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+  line-height: 1.5;
+}
+
+.review-portal__input:focus,
+.review-portal__textarea:focus,
+.review-portal__select:focus {
+  outline: none;
+  border-color: #0a4a24;
+  box-shadow: 0 0 0 3px rgba(10, 74, 36, 0.15);
+}
+
+.review-portal__error {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: #b42318;
+}
+
+.review-portal__submit {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.65rem 1.25rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  background: #0a4a24;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.review-portal__submit:hover:not(:disabled) {
+  background: #083a1d;
+}
+
+.review-portal__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

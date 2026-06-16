@@ -1,0 +1,71 @@
+/* react-day-picker — admin theme + compact grid */
+.admin-date-range-filter {
+  min-width: 0;
+}
+
+.admin-date-range-filter__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.admin-date-range-filter__preset {
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.9);
+  color: #374151;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.admin-date-range-filter__preset:hover {
+  border-color: #198754;
+  color: #198754;
+  background: rgba(25, 135, 84, 0.06);
+}
+
+.admin-date-range-filter__hint {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-day-picker.rdp-root {
+  --rdp-accent-color: #198754;
+  --rdp-accent-background-color: rgba(25, 135, 84, 0.14);
+  --rdp-day-height: 34px;
+  --rdp-day-width: 34px;
+  --rdp-day_button-height: 32px;
+  --rdp-day_button-width: 32px;
+  --rdp-day_button-border-radius: 8px;
+  --rdp-nav-height: 2.4rem;
+  margin: 0 auto;
+}
+
+.admin-day-picker .rdp-months {
+  justify-content: center;
+}
+
+.admin-day-picker .rdp-weekday {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+.admin-day-picker .rdp-caption_label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1f2937;
+}

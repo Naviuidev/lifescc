@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import BookSlotModal from './BookSlotModal.jsx'
 
 /** Replace with real contact details when ready */
 const TEL_HREF = 'tel:+910000000000'
@@ -87,6 +88,7 @@ function IconCalendar(props) {
 
 export default function NavbarTopBar() {
   const [waOpen, setWaOpen] = useState(false)
+  const [bookSlotOpen, setBookSlotOpen] = useState(false)
   const waWrapRef = useRef(null)
 
   useEffect(() => {
@@ -100,6 +102,7 @@ export default function NavbarTopBar() {
   }, [])
 
   return (
+    <>
     <div
       className="navbar-top-bar"
       role="navigation"
@@ -156,16 +159,19 @@ export default function NavbarTopBar() {
             <IconMail />
           </a>
 
-          <a
+          <button
+            type="button"
             className="navbar-top-bar__icon"
-            href="#book"
             aria-label="Book appointment"
-            title="Calendar"
+            title="Book a slot"
+            onClick={() => setBookSlotOpen(true)}
           >
             <IconCalendar />
-          </a>
+          </button>
         </div>
       </div>
     </div>
+    <BookSlotModal open={bookSlotOpen} onClose={() => setBookSlotOpen(false)} />
+    </>
   )
 }

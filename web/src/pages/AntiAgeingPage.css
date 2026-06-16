@@ -1,0 +1,253 @@
+/* Intro — full width, contact wash + leaf + centred copy */
+.anti-ageing-intro {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  text-align: center;
+  color-scheme: light;
+  background: transparent;
+}
+
+.anti-ageing-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(
+      180deg,
+      rgba(240, 244, 249, 0.78) 0%,
+      rgba(240, 244, 249, 0.84) 45%,
+      rgba(240, 244, 249, 0.9) 100%
+    ),
+    var(--contact-us-bg-image);
+  background-repeat: no-repeat;
+  background-position: center top, center top;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+  pointer-events: none;
+}
+
+@media (max-width: 899.98px) {
+  .anti-ageing-intro::before {
+    background-attachment: scroll, scroll;
+  }
+}
+
+.anti-ageing-intro__shell {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 7vw, 4rem);
+  box-sizing: border-box;
+}
+
+.anti-ageing-intro__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.anti-ageing-intro__divider-line {
+  flex: 1;
+  height: 1px;
+  min-width: 1.5rem;
+  background: #9ca3af;
+}
+
+.anti-ageing-intro__divider-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anti-ageing-intro__divider-svg {
+  display: block;
+  width: clamp(2rem, 4.5vw, 2.5rem);
+  height: auto;
+}
+
+.anti-ageing-intro__title {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+  text-align: center;
+}
+
+.anti-ageing-intro__p {
+  margin: 0 0 clamp(0.95rem, 2vw, 1.15rem);
+  line-height: 1.72;
+  color: #374151;
+  text-align: center;
+}
+
+.anti-ageing-intro__p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Therapies — 8 / 4: copy then image (desktop); stacked on small screens */
+.anti-ageing-therapies {
+  width: 100%;
+  background: #ffffff;
+  color: #111827;
+  color-scheme: light;
+}
+
+.anti-ageing-therapies__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.anti-ageing-therapies__grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.25rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .anti-ageing-therapies__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+    align-items: stretch;
+  }
+}
+
+.anti-ageing-therapies__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.anti-ageing-therapies__copy .cryolipolysis-treatment__subheading:first-of-type {
+  margin-top: 0;
+}
+
+.anti-ageing-therapies__book-btn {
+  margin-top: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+.anti-ageing-therapies__quote {
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0 0;
+  padding: 0;
+  border: none;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.45;
+  color: #111827;
+  text-align: left;
+}
+
+.anti-ageing-therapies__quote cite {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: clamp(0.88rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  font-style: normal;
+  color: #374151;
+}
+
+.anti-ageing-therapies__media {
+  margin: 0;
+  min-width: 0;
+}
+
+.anti-ageing-therapies__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(17, 24, 39, 0.08);
+}
+
+@media (min-width: 900px) {
+  .anti-ageing-therapies__img {
+    position: sticky;
+    top: calc(var(--navbar-top-icons-h, 76px) + 1rem);
+    max-height: min(90vh, 640px);
+  }
+}
+
+/* Partner — row: 4 img | 8 copy; row2: full-width CTA */
+.anti-ageing-partner {
+  width: 100%;
+  background: #f8fafc;
+  color: #111827;
+  color-scheme: light;
+}
+
+.anti-ageing-partner__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+
+.anti-ageing-partner__top {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .anti-ageing-partner__top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+.anti-ageing-partner__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.anti-ageing-partner__figure .ba-slider-wrap {
+  width: 100%;
+}
+
+.anti-ageing-partner__figure .ba-slider {
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+}
+
+.anti-ageing-partner__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.anti-ageing-partner__bottom {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-top: clamp(1.5rem, 3.5vw, 2rem);
+  border-top: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+.anti-ageing-partner__bottom .coolsculpting-treatment__p {
+  margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.anti-ageing-partner__bottom .coolsculpting-treatment__p:last-of-type {
+  margin-bottom: 0;
+}
+
+.anti-ageing-partner__book-btn {
+  margin-top: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+/* Book strip: skin hero form inside contact card */
+.anti-ageing-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.anti-ageing-page .anti-ageing-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

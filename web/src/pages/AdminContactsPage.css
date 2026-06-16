@@ -1,0 +1,21 @@
+.admin-table-scroll--contacts .admin-data-table {
+  min-width: 1040px;
+}
+
+.admin-contacts__mailto {
+  color: #0a4a24;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-contacts__mailto:hover {
+  text-decoration: underline;
+}
+
+.admin-contacts__msg {
+  display: inline-block;
+  max-width: 280px;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: #374151;
+}

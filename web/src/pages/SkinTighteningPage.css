@@ -1,0 +1,288 @@
+/* Hero — ban-tight: contain, left */
+.skintight-page.coolsculpting-page .skintight-banner-hero.coolsculpting-hero {
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.skintight-page .skintight-banner-hero__scrim.coolsculpting-hero__scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.35) 34%,
+    rgba(255, 255, 255, 0.78) 52%,
+    rgba(255, 255, 255, 0.94) 68%,
+    #ffffff 100%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .skintight-page.coolsculpting-page .skintight-banner-hero.coolsculpting-hero.coolsculpting-hero--with-inline-form {
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+/* Intro — col-12 */
+.skintight-intro {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.skintight-intro__shell {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skintight-intro__title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.skintight-intro__p {
+  margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.98rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+.skintight-intro__p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ultherapy — 8 + 4 */
+.skintight-ultherapy {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.skintight-ultherapy__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.skintight-ultherapy__row {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .skintight-ultherapy__row {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: center;
+  }
+}
+
+.skintight-ultherapy__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skintight-ultherapy__sub {
+  margin: clamp(1.25rem, 2.5vw, 1.65rem) 0 0.5rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.02rem, 1.4vw, 1.14rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.skintight-ultherapy__cta {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.skintight-ultherapy__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.skintight-ultherapy__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* FAQ + Why — Contact Us bg */
+.skintight-faq-why {
+  width: 100%;
+  color: #111827;
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+.skintight-faq-why__band.contact-us-page-wrap {
+  justify-content: center;
+  min-height: clamp(30rem, 56vh, 50rem);
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+}
+
+.skintight-faq-why__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skintight-faq-why__row {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .skintight-faq-why__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.skintight-faq-why__col--why .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.skintight-faq-why__col--why .coolsculpting-treatment__p:last-of-type {
+  margin-bottom: 0;
+}
+
+.skintight-faq-why__cta {
+  margin-top: clamp(1.15rem, 2.8vw, 1.5rem);
+}
+
+/* Accordions */
+.skintight-faq__accordions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.skintight-faq-acc__item {
+  border: 1px solid rgba(21, 128, 61, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  overflow: clip;
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.skintight-faq-acc__item--open {
+  border-color: rgba(10, 74, 36, 0.35);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.skintight-faq-acc__heading {
+  margin: 0;
+}
+
+.skintight-faq-acc__trigger {
+  width: 100%;
+  margin: 0;
+  padding: 0.95rem 1rem 0.95rem 0.85rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font: inherit;
+  text-align: start;
+}
+
+.skintight-faq-acc__num {
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  background: #0a4a24;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skintight-faq-acc__question {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+.skintight-faq-acc__chevron {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  color: #0a4a24;
+  background: #ecfdf5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.skintight-faq-acc__chevron svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
+}
+
+.skintight-faq-acc__item--open .skintight-faq-acc__chevron {
+  transform: rotate(180deg);
+}
+
+.skintight-faq-acc__trigger:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: -2px;
+}
+
+.skintight-faq-acc__panel-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skintight-faq-acc__item--open .skintight-faq-acc__panel-wrap {
+  grid-template-rows: 1fr;
+}
+
+.skintight-faq-acc__panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.skintight-faq-acc__answer {
+  margin: 0;
+  padding: 0 1rem 0.85rem 3.35rem;
+  font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* Book strip */
+.skintight-page .skintight-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.skintight-page .skintight-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

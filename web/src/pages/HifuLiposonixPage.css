@@ -1,0 +1,58 @@
+/* Intro: same white wash + contact strip photo as BMI day-to-day section */
+.hifu-liposonix-intro.coolsculpting-treatment {
+  position: relative;
+  isolation: isolate;
+  background: #ffffff;
+  color-scheme: light;
+}
+
+.hifu-liposonix-intro.coolsculpting-treatment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 11%) 0%,
+      rgb(255 255 255 / 51%) 42%,
+      rgba(255, 255, 255, 0.93) 100%
+    ),
+    var(--contact-us-bg-image);
+  background-repeat: no-repeat;
+  background-position: center top, center top;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+}
+
+@media (max-width: 899.98px) {
+  .hifu-liposonix-intro.coolsculpting-treatment::before {
+    background-attachment: scroll, scroll;
+  }
+}
+
+.hifu-liposonix-intro .coolsculpting-treatment__shell {
+  position: relative;
+  z-index: 1;
+}
+
+/* Intro copy: main heading centered; body uses treatment section typography */
+.hifu-liposonix-intro__title {
+  margin: 0 auto clamp(1.15rem, 3vw, 1.5rem);
+  max-width: 52rem;
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+  text-align: center;
+}
+
+.hifu-liposonix-intro .cryolipolysis-treatment__subheading {
+  text-align: start;
+}
+
+.hifu-liposonix-intro .coolsculpting-treatment__p {
+  text-align: start;
+}

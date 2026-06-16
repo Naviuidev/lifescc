@@ -1,0 +1,375 @@
+/* Hero: full-width banner + title & consult form */
+.qlaser-page.coolsculpting-page .qlaser-banner-hero.coolsculpting-hero {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.qlaser-page .qlaser-banner-hero__scrim.coolsculpting-hero__scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.35) 34%,
+    rgba(255, 255, 255, 0.78) 52%,
+    rgba(255, 255, 255, 0.94) 68%,
+    #ffffff 100%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .qlaser-page.coolsculpting-page .qlaser-banner-hero.coolsculpting-hero.coolsculpting-hero--with-inline-form {
+    background-size: cover;
+    background-position: left center;
+  }
+}
+
+/* ——— Principle — 8/12 + 4/12 content + image ——— */
+.qlaser-principle {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.qlaser-principle__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.qlaser-principle__row {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .qlaser-principle__row {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  }
+}
+
+.qlaser-principle__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.qlaser-principle__figure {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f5f9;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.qlaser-principle__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ——— Q laser treatment — Contact Us–style bg + green curve + accordions ——— */
+.qlaser-faq {
+  overflow-x: clip;
+}
+
+.qlaser-faq__band.contact-us-page-wrap {
+  justify-content: center;
+  min-height: clamp(28rem, 52vh, 48rem);
+  padding: clamp(2.75rem, 6vw, 4.25rem) clamp(1rem, 4vw, 2rem);
+}
+
+.qlaser-faq__band.contact-us-page-wrap > .qlaser-faq__curve {
+  position: absolute;
+  left: -12%;
+  bottom: -38%;
+  width: 124%;
+  height: 58%;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: radial-gradient(ellipse 78% 72% at 50% 100%, rgba(187, 247, 208, 0.5) 0%, transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.qlaser-faq__band.contact-us-page-wrap > .qlaser-faq__shell {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.qlaser-faq__title {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: #0f172a;
+}
+
+.qlaser-faq__accordions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.qlaser-faq-acc__item {
+  border: 1px solid rgba(21, 128, 61, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  overflow: clip;
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.qlaser-faq-acc__item--open {
+  border-color: rgba(10, 74, 36, 0.35);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.qlaser-faq-acc__heading {
+  margin: 0;
+}
+
+.qlaser-faq-acc__trigger {
+  width: 100%;
+  margin: 0;
+  padding: 0.95rem 1rem 0.95rem 0.85rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font: inherit;
+  text-align: start;
+}
+
+.qlaser-faq-acc__num {
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  background: #0a4a24;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qlaser-faq-acc__question {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+.qlaser-faq-acc__chevron {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  color: #0a4a24;
+  background: #ecfdf5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.qlaser-faq-acc__chevron svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: block;
+}
+
+.qlaser-faq-acc__item--open .qlaser-faq-acc__chevron {
+  transform: rotate(180deg);
+}
+
+.qlaser-faq-acc__trigger:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: -2px;
+}
+
+.qlaser-faq-acc__panel-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.qlaser-faq-acc__item--open .qlaser-faq-acc__panel-wrap {
+  grid-template-rows: 1fr;
+}
+
+.qlaser-faq-acc__panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.qlaser-faq-acc__answer {
+  margin: 0;
+  padding: 0 1rem 0.85rem 3.35rem;
+  font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+  line-height: 1.7;
+  color: #475569;
+}
+
+.qlaser-faq-acc__bullets {
+  margin: 0 0 0.85rem;
+  padding: 0 1rem 0.85rem 3.35rem;
+  list-style: none;
+}
+
+.qlaser-faq-acc__bullets li {
+  position: relative;
+  margin: 0 0 0.55rem;
+  padding-left: 1.1rem;
+  font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+  line-height: 1.65;
+  color: #475569;
+}
+
+.qlaser-faq-acc__bullets li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.55rem;
+  line-height: 1.65;
+  color: #0a4a24;
+}
+
+.qlaser-faq-acc__bullets li:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qlaser-faq-acc__panel-wrap,
+  .qlaser-faq-acc__chevron {
+    transition-duration: 0.08s;
+  }
+}
+
+/* ——— Where does it work — full-bleed 50/50 ——— */
+.qlaser-where {
+  width: 100%;
+}
+
+.qlaser-where__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: clamp(20rem, 48vw, 36rem);
+}
+
+@media (min-width: 900px) {
+  .qlaser-where__row {
+    grid-template-columns: 1fr 1fr;
+    min-height: clamp(24rem, 44vw, 38rem);
+  }
+}
+
+.qlaser-where__visual {
+  position: relative;
+  min-height: clamp(14rem, 38vw, 22rem);
+  margin: 0;
+  padding: 0;
+  background: #e5e7eb;
+}
+
+@media (min-width: 900px) {
+  .qlaser-where__visual {
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+.qlaser-where__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.qlaser-where__copy-wrap {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+@media (min-width: 900px) {
+  .qlaser-where__copy-wrap {
+    border-top: none;
+    border-left: 1px solid rgba(148, 163, 184, 0.25);
+  }
+}
+
+.qlaser-where__copy {
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.75rem);
+  box-sizing: border-box;
+  max-width: 36rem;
+}
+
+.qlaser-where__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.qlaser-where__list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qlaser-where__list li {
+  position: relative;
+  margin: 0 0 0.65rem;
+  padding-left: 1.65rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.04rem);
+  line-height: 1.55;
+  color: #334155;
+}
+
+.qlaser-where__list li::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  top: 0.35em;
+  width: 0.5rem;
+  height: 0.85rem;
+  border: solid #0a4a24;
+  border-width: 0 0.14rem 0.14rem 0;
+  transform: rotate(45deg);
+}
+
+.qlaser-where__list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Map — full viewport width ——— */
+.qlaser-map {
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.qlaser-map__iframe {
+  display: block;
+  width: 100%;
+  height: 480px;
+  border: 0;
+}

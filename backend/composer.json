@@ -3,11 +3,15 @@
     "description": "Lifescc PHP API",
     "type": "project",
     "require": {
-        "php": ">=8.1"
+        "php": ">=8.1",
+        "phpmailer/phpmailer": "^7.0"
     },
     "autoload": {
         "psr-4": {
             "Lifescc\\": "src/"
         }
+    },
+    "scripts": {
+        "dev": "php -S 127.0.0.1:8080 -t public public/router.php"
     }
 }

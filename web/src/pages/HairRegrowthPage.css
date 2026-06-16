@@ -1,0 +1,121 @@
+/* 4 / 8 split — image | copy */
+.hair-regrowth-page .hrg-split .coolsculpting-treatment__shell {
+  max-width: 1180px;
+}
+
+.hair-regrowth-page .hrg-split__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .hair-regrowth-page .hrg-split--4-8 .hrg-split__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+.hair-regrowth-page .hrg-split__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.hair-regrowth-page .hrg-split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hair-regrowth-page .hrg-split__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+/* Worries section — heading full width; 8+4 para + video; closing para */
+.hair-regrowth-page .hrg-worry .hrg-worry__shell {
+  max-width: 1180px;
+}
+
+.hair-regrowth-page .hrg-worry__row--12 {
+  width: 100%;
+}
+
+.hair-regrowth-page .hrg-worry__row--12 .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.hair-regrowth-page .hrg-worry__row--8-4 {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+@media (min-width: 900px) {
+  .hair-regrowth-page .hrg-worry__row--8-4 {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  }
+}
+
+.hair-regrowth-page .hrg-worry__lead-col {
+  min-width: 0;
+}
+
+.hair-regrowth-page .hrg-worry__lead-col .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+.hair-regrowth-page .hrg-worry__tail {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.hair-regrowth-page .hrg-worry__tail .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+.hair-regrowth-page .hrg-video {
+  min-width: 0;
+}
+
+.hair-regrowth-page .hrg-video__inner {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(15, 23, 42, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.hair-regrowth-page .hrg-video__inner iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 899.98px) {
+  .hair-regrowth-page .hrg-worry__row--reverse-mobile .hrg-video {
+    order: -1;
+  }
+}
+
+/* Book strip */
+.hair-regrowth-page .hrg-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.hair-regrowth-page .hrg-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

@@ -1,0 +1,192 @@
+{
+    "id": 900000001,
+    "name": "Life SCC Assistant",
+    "published": 1,
+    "website_enabled": 1,
+    "created_at": null,
+    "updated_at": "2026-06-14T07:00:43+00:00",
+    "steps": [
+        {
+            "id": "s_welcome",
+            "type": "message",
+            "content": "Welcome to Life Slimming and Cosmetic Clinic.\n\nWe can help you explore treatments, find a branch near you, or connect you with our team. Tap Continue when you are ready."
+        },
+        {
+            "id": "s_main_service",
+            "type": "main_service_carousel",
+            "label": "What would you like help with today?",
+            "required": true
+        },
+        {
+            "id": "s_near_me",
+            "type": "site_near_me",
+            "title": "Which city area are you nearest?",
+            "service_step_id": "s_main_service",
+            "location_cities": [
+                {
+                    "id": "hyderabad",
+                    "label": "Hyderabad"
+                },
+                {
+                    "id": "visakhapatnam",
+                    "label": "Visakhapatnam"
+                },
+                {
+                    "id": "andhra-pradesh",
+                    "label": "Andhra Pradesh"
+                }
+            ],
+            "branches": [
+                {
+                    "id": "gachibowli",
+                    "name": "Gachibowli",
+                    "address": "1st Floor, Above Airtel Store, M.M Arcade Building, Near ICICI Bank, Vinayak Nagar, Gachibowli, Hyderabad 500032",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4409",
+                    "lng": "78.3492",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "banjara-hills",
+                    "name": "Banjara Hills",
+                    "address": "2nd Floor, Above SBH Bank, Grand Sitara Hotel Building, Road No 12, Banjara Hills, Hyderabad 500034",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4154",
+                    "lng": "78.4342",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "madhapur",
+                    "name": "Madhapur",
+                    "address": "3rd Floor, Above Karachi Bakery, Opp: Pizza Hut, Hi-tech City Road, Madhapur, Hyderabad",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4488",
+                    "lng": "78.3905",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "chandanagar",
+                    "name": "Chandanagar",
+                    "address": "Yad Kumar Chamber, Above ICICI Bank, Opp RS Brothers, Gangaram, NH-9, Chandanagar, Hyderabad",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4954",
+                    "lng": "78.3145",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "dilsukhnagar",
+                    "name": "Dilsukhnagar",
+                    "address": "5th Floor, Kontham Ram Reddy Complex, Opp Kothapet Fruit Market, Kothapet, Dilsukhnagar, Hyderabad",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.3682",
+                    "lng": "78.5248",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "sr-nagar",
+                    "name": "SR Nagar",
+                    "address": "1st Floor, Om Plaza, Above Jockey Showroom, Opp Community Hall, SR Nagar, PS Road, Hyderabad",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4428",
+                    "lng": "78.4446",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "himayat-nagar",
+                    "name": "Himayat Nagar",
+                    "address": "#101, Skill Spectrum Complex, Liberty X Roads, Adj to TTD Kalyanamatapam, Himayat Nagar, Hyderabad 500029",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4063",
+                    "lng": "78.4828",
+                    "region": "hyderabad"
+                },
+                {
+                    "id": "vizag",
+                    "name": "Vizag",
+                    "address": "Above SBI, Beside Malabar Gold, Sampath Vinayaka Temple, Asilmetta, Visakhapatnam 530003",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.7214",
+                    "lng": "83.3163",
+                    "region": "visakhapatnam"
+                },
+                {
+                    "id": "vijayawada",
+                    "name": "Vijayawada",
+                    "address": "Lakshmi Avenue, 1st Floor, Srinivasa Nagar Bank Colony, Beside TATA Car Showroom, Vijayawada 520008",
+                    "phone": "95 33 44 55 66",
+                    "lat": "16.5062",
+                    "lng": "80.648",
+                    "region": "andhra-pradesh"
+                },
+                {
+                    "id": "nellore",
+                    "name": "Nellore",
+                    "address": "Ward No 16-3, Beside Narayana High School Srihari Nagar, Mini Bypass Road Nellore, Andhra Pradesh 524002",
+                    "phone": "95 33 44 55 66",
+                    "lat": "14.4426",
+                    "lng": "79.9865",
+                    "region": "andhra-pradesh"
+                },
+                {
+                    "id": "kukatpally",
+                    "name": "Kukatpally",
+                    "address": "2nd Floor, Plot No 201, JNTU–Hitech City Road, Above Mandilicious, Dharma Reddy Colony Phase II, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072",
+                    "phone": "95 33 44 55 66",
+                    "lat": "17.4935",
+                    "lng": "78.3998",
+                    "region": "hyderabad"
+                }
+            ],
+            "required": true
+        },
+        {
+            "id": "s_call",
+            "type": "call_specialist",
+            "message": "You can reach our specialists on 95 33 44 55 66 for appointments and queries. Our clinics are open Monday to Saturday.\n\nTap the arrow below to continue."
+        },
+        {
+            "id": "s_treat",
+            "type": "services",
+            "label": "Which treatment would you like to know more about?",
+            "services_catalog": "treatments",
+            "services_preset": "treatment",
+            "services_page_map": [],
+            "required": true
+        },
+        {
+            "id": "s_name",
+            "type": "text",
+            "label": "Your full name",
+            "mapTo": "full_name",
+            "required": true,
+            "placeholder": "As on your ID"
+        },
+        {
+            "id": "s_email",
+            "type": "text",
+            "label": "Your email",
+            "mapTo": "email",
+            "required": true,
+            "placeholder": "name@example.com"
+        },
+        {
+            "id": "s_phone",
+            "type": "text",
+            "label": "Your mobile number",
+            "mapTo": "phone",
+            "required": true,
+            "placeholder": "10-digit mobile"
+        },
+        {
+            "id": "s_loop",
+            "type": "loop",
+            "title": "Thank you!",
+            "animated_lines": [
+                "We have received your details.",
+                "Our team will get in touch shortly.",
+                "Tap below to start a new chat."
+            ],
+            "target_step_id": "s_welcome"
+        }
+    ]
+}

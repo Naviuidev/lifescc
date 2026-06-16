@@ -1,0 +1,190 @@
+/* About Us — hero banner (additional sections can follow below) */
+.about-us-page {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  color-scheme: light;
+}
+
+.about-us-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(20rem, 42svh, 28rem);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--about-hero-nav-clearance, calc(var(--navbar-top-icons-h, 76px) + 5.25rem)) clamp(1rem, 4vw, 2rem)
+    clamp(2.5rem, 6vw, 4rem);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.about-us-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #0f2918;
+  background-image: linear-gradient(
+      120deg,
+      rgba(10, 74, 36, 0.88) 0%,
+      rgba(10, 74, 36, 0.55) 42%,
+      rgba(15, 23, 42, 0.45) 100%
+    ),
+    url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1920&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  .about-us-hero__media {
+    background-attachment: fixed;
+  }
+}
+
+.about-us-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  text-align: left;
+}
+
+.about-us-hero__eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.about-us-hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-hero__badge {
+  display: inline-block;
+  padding: 0.15rem 0.85rem;
+  margin-left: 0.25rem;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, #ec4899 0%, #f97316 55%, #f59e0b 100%);
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
+  vertical-align: middle;
+}
+
+.about-us-hero__lead {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.9vw, 1.0625rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 38ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-us-hero__media {
+    background-attachment: scroll;
+  }
+}
+
+/* ——— Intro + before/after ——— */
+.about-us-intro {
+  width: 100%;
+  background: #fff;
+  text-align: left;
+}
+
+.about-us-intro__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 6vw, 4.5rem);
+  box-sizing: border-box;
+}
+
+.about-us-intro__grid {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-us-intro__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.75rem 3rem;
+    align-items: start;
+  }
+}
+
+.about-us-intro__copy {
+  min-width: 0;
+}
+
+.about-us-intro__p {
+  margin: 0 0 1.15rem;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.about-us-intro__p:last-of-type {
+  margin-bottom: 0.85rem;
+}
+
+.about-us-intro__list {
+  margin: 0;
+  padding: 0 0 0 1.35rem;
+  list-style-type: circle;
+  color: #6b7280;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.7;
+}
+
+.about-us-intro__list li {
+  margin-bottom: 0.35rem;
+  padding-left: 0.15rem;
+}
+
+.about-us-intro__list li::marker {
+  color: #c4c4c4;
+}
+
+.about-us-intro__strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ——— Milestones & treatments copy ——— */
+.about-us-story {
+  width: 100%;
+  background: #fff;
+  text-align: center;
+}
+
+.about-us-story__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 6vw, 4.5rem);
+  box-sizing: border-box;
+}
+
+.about-us-story__p {
+  margin: 0 auto 1.35rem;
+  max-width: min(72ch, 100%);
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.65;
+  color: #374151;
+}
+
+.about-us-story__p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,107 @@
+.admin-service-vertical {
+  max-width: 72rem;
+}
+
+.admin-service-vertical__head {
+  margin-bottom: 1.5rem;
+}
+
+.admin-service-vertical__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.admin-service-vertical__lead {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4b5563;
+}
+
+.admin-service-vertical__card {
+  padding: 1.25rem 1.35rem;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+.admin-service-vertical__card-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0a4a24;
+}
+
+.admin-service-vertical__placeholder {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.admin-service-vertical__card--table {
+  margin-top: 1rem;
+}
+
+.admin-service-vertical__table-wrap {
+  overflow: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-service-vertical__table-wrap--wide {
+  min-width: 0;
+}
+
+.admin-service-vertical__data-table {
+  min-width: 1080px;
+}
+
+.admin-service-vertical__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.admin-service-vertical__table th,
+.admin-service-vertical__table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.admin-service-vertical__table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.admin-service-vertical__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-service-vertical__empty {
+  text-align: center !important;
+  color: #64748b !important;
+  padding: 1rem !important;
+}
+
+.admin-service-vertical__error {
+  margin: 0 0 0.7rem;
+  font-size: 0.84rem;
+  color: #b91c1c;
+}

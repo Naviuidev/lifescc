@@ -1,0 +1,112 @@
+/* Hero — banner fully visible (contain), anchored left */
+.acnepimple-page.coolsculpting-page .acnepimple-banner-hero.coolsculpting-hero {
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.acnepimple-page .acnepimple-banner-hero__scrim.coolsculpting-hero__scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.35) 34%,
+    rgba(255, 255, 255, 0.78) 52%,
+    rgba(255, 255, 255, 0.94) 68%,
+    #ffffff 100%
+  );
+}
+
+@media (max-width: 767.98px) {
+  .acnepimple-page.coolsculpting-page .acnepimple-banner-hero.coolsculpting-hero.coolsculpting-hero--with-inline-form {
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+/* Intro — single column */
+.acnepimple-intro {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.acnepimple-intro__shell {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.acnepimple-intro__title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.acnepimple-intro__p {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: #475569;
+}
+
+/* How it works — 8 + 4 row, then full-width copy */
+.acnepimple-how {
+  padding: clamp(2.75rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+}
+
+.acnepimple-how__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.acnepimple-how__top {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .acnepimple-how__top {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: center;
+  }
+}
+
+.acnepimple-how__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.acnepimple-how__slider-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.acnepimple-how__wide {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  padding-top: clamp(1.75rem, 4vw, 2.25rem);
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  text-align: start;
+}
+
+.acnepimple-how__wide .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+/* Book strip — form + photo band */
+.acnepimple-page .acnepimple-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.acnepimple-page .acnepimple-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

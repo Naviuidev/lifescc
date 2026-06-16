@@ -1,0 +1,133 @@
+.admin-table-scroll--reviews .admin-data-table {
+  min-width: 1100px;
+}
+
+.admin-reviews__thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.admin-reviews__stars {
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.admin-reviews__star-on {
+  color: #fbbf24;
+}
+
+.admin-reviews__star-off {
+  color: #e5e7eb;
+}
+
+.admin-reviews__badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.admin-reviews__badge--pending {
+  background: rgba(234, 179, 8, 0.2);
+  color: #92400e;
+}
+
+.admin-reviews__badge--approved {
+  background: rgba(25, 135, 84, 0.15);
+  color: #0a4a24;
+}
+
+.admin-reviews__badge--discarded {
+  background: rgba(107, 114, 128, 0.2);
+  color: #374151;
+}
+
+.admin-reviews__actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  min-height: 2.25rem;
+}
+
+.admin-reviews__patching {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+}
+
+.admin-reviews__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    transform 0.1s ease;
+}
+
+.admin-reviews__icon-btn:focus-visible {
+  outline: 2px solid #0a4a24;
+  outline-offset: 2px;
+}
+
+.admin-reviews__icon-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-reviews__icon-btn--approve {
+  background: #198754;
+  border-color: #198754;
+  color: #fff;
+}
+
+.admin-reviews__icon-btn--approve:hover:not(:disabled) {
+  background: #157347;
+  border-color: #157347;
+  transform: scale(1.04);
+}
+
+.admin-reviews__icon-btn--reject {
+  background: #fff;
+  border-color: #ced4da;
+  color: #6c757d;
+}
+
+.admin-reviews__icon-btn--reject:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
+  transform: scale(1.04);
+}
+
+.admin-reviews__action-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.admin-reviews__delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.admin-reviews__delete-icon {
+  display: block;
+}

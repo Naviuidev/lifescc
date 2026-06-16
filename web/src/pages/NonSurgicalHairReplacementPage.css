@@ -1,0 +1,125 @@
+/* 4 / 8 and 8 / 4 split rows */
+.non-surgical-hair-page .nshr-split .coolsculpting-treatment__shell {
+  max-width: 1180px;
+}
+
+.non-surgical-hair-page .nshr-split__grid {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .non-surgical-hair-page .nshr-split--4-8 .nshr-split__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+.non-surgical-hair-page .nshr-split__figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.non-surgical-hair-page .nshr-split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.non-surgical-hair-page .nshr-split__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+/* Who section: row 12 = heading; row 8+4 = lead para + video; row 12 = two closing paras */
+.non-surgical-hair-page .nshr-who .nshr-who__shell {
+  max-width: 1180px;
+}
+
+.non-surgical-hair-page .nshr-who__row--12 {
+  width: 100%;
+}
+
+.non-surgical-hair-page .nshr-who__row--8-4 {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .non-surgical-hair-page .nshr-who__row--8-4 {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  }
+}
+
+.non-surgical-hair-page .nshr-who__lead-col {
+  min-width: 0;
+}
+
+.non-surgical-hair-page .nshr-who__lead-col .coolsculpting-treatment__title {
+  margin: 0;
+}
+
+.non-surgical-hair-page .nshr-who__lead-col .coolsculpting-treatment__p {
+  margin-top: 0;
+}
+
+.non-surgical-hair-page .nshr-who__lead-col .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+.non-surgical-hair-page .nshr-who__tail {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.non-surgical-hair-page .nshr-who__tail .coolsculpting-treatment__p:last-child {
+  margin-bottom: 0;
+}
+
+/* YouTube embed (16:9) */
+.non-surgical-hair-page .nshr-video {
+  min-width: 0;
+}
+
+.non-surgical-hair-page .nshr-video__inner {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(15, 23, 42, 0.1);
+  aspect-ratio: 16 / 9;
+}
+
+.non-surgical-hair-page .nshr-video__inner iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 899.98px) {
+  .non-surgical-hair-page .nshr-who__row--reverse-mobile .nshr-video {
+    order: -1;
+  }
+}
+
+/* Book strip: hair hero form inside contact card */
+.non-surgical-hair-page .nshr-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.non-surgical-hair-page .nshr-book-strip.contact-us-page-wrap::before {
+  display: none;
+}

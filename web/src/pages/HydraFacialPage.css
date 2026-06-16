@@ -1,0 +1,281 @@
+/* Hero: banner spans full viewport width (shared hero uses contain + side bias) */
+.hydra-facial-page.coolsculpting-page .coolsculpting-hero.coolsculpting-hero--with-inline-form {
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (max-width: 767.98px) {
+  .hydra-facial-page.coolsculpting-page .coolsculpting-hero.coolsculpting-hero--with-inline-form {
+    background-size: cover;
+    background-position: left center;
+  }
+}
+
+/* Full-width intro — centered + contact photo wash */
+.hydra-facial-method {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  text-align: center;
+  color-scheme: light;
+  background: transparent;
+}
+
+.hydra-facial-method::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(
+      180deg,
+      rgba(240, 244, 249, 0.78) 0%,
+      rgba(240, 244, 249, 0.84) 45%,
+      rgba(240, 244, 249, 0.9) 100%
+    ),
+    var(--contact-us-bg-image);
+  background-repeat: no-repeat;
+  background-position: center top, center top;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+  pointer-events: none;
+}
+
+@media (max-width: 899.98px) {
+  .hydra-facial-method::before {
+    background-attachment: scroll, scroll;
+  }
+}
+
+.hydra-facial-method__shell {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(2.75rem, 7vw, 4rem);
+  box-sizing: border-box;
+}
+
+.hydra-facial-method__title {
+  margin: 0 0 clamp(1.15rem, 3vw, 1.5rem);
+  font-family: var(--heading, 'Poppins', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: #111827;
+  text-align: center;
+}
+
+.hydra-facial-method__p {
+  margin: 0;
+  line-height: 1.72;
+  color: #374151;
+  text-align: center;
+}
+
+/* Photo as full-bleed BG; white/open area of the asset is on the left — copy sits there */
+.hydra-facial-split {
+  width: 100%;
+}
+
+.hydra-facial-split__band {
+  width: 100%;
+  background-color: #f8faf8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Anchor image from the left so the frame’s clear / light side stays screen-left */
+  background-position: left center;
+}
+
+.hydra-facial-split__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
+}
+
+.hydra-facial-split__layout {
+  display: grid;
+  min-height: clamp(22rem, 52vw, 40rem);
+  align-items: center;
+  justify-items: stretch;
+}
+
+.hydra-facial-split__copy {
+  text-align: start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: clamp(1.75rem, 4vw, 2.5rem) 0;
+}
+
+.hydra-facial-split__copy .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.hydra-facial-split__copy .cryolipolysis-treatment__subheading {
+  margin-top: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+@media (max-width: 899.98px) {
+  .hydra-facial-split__band {
+    background-position: left center;
+    background-size: cover;
+  }
+
+  .hydra-facial-split__layout {
+    min-height: unset;
+    padding-top: min(52vw, 300px);
+  }
+
+  .hydra-facial-split__copy {
+    margin-top: -0.5rem;
+    padding: clamp(1.35rem, 4vw, 2rem) clamp(1rem, 3vw, 1.25rem) clamp(2rem, 5vw, 2.75rem);
+    background: #ffffff;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.06);
+  }
+}
+
+@media (min-width: 900px) {
+  .hydra-facial-split__layout {
+    justify-items: start;
+    min-height: clamp(26rem, 48vw, 42rem);
+  }
+
+  .hydra-facial-split__copy {
+    width: min(100%, 28rem);
+    max-width: 46%;
+    justify-self: start;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem) clamp(2rem, 4vw, 3rem) 0;
+    /* Light backing so type stays readable on any off-white in the photo */
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+  }
+}
+
+@media (min-width: 900px) and (prefers-reduced-motion: reduce) {
+  .hydra-facial-split__copy {
+    backdrop-filter: none;
+  }
+}
+
+/* Why Lifescc — half copy / half hero photo flush like contact strip photo column */
+.hydra-facial-why {
+  width: 100%;
+  background: #ffffff;
+  color: #111827;
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+.hydra-facial-why__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+
+.hydra-facial-why__copy-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2rem);
+  min-width: 0;
+}
+
+.hydra-facial-why__copy-inner {
+  width: 100%;
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hydra-facial-why__copy-inner .coolsculpting-treatment__title {
+  margin-top: 0;
+}
+
+.hydra-facial-why__book-btn {
+  margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
+  align-self: flex-start;
+}
+
+/* Full-bleed map (edge-to-edge viewport) */
+.hydra-facial-map {
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.hydra-facial-map__iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+.hydra-facial-why__visual {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: clamp(220px, 42vh, 420px);
+  min-width: 0;
+}
+
+.hydra-facial-why__photo {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 900px) {
+  .hydra-facial-why__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 50vw);
+    align-items: stretch;
+    min-height: clamp(380px, 52vh, 640px);
+  }
+
+  .hydra-facial-why__copy-wrap {
+    padding-left: calc(max(0px, (100vw - 1180px) / 2) + clamp(1rem, 4vw, 2rem));
+    padding-right: clamp(1.25rem, 3vw, 2rem);
+    padding-top: clamp(2.25rem, 5vw, 3.5rem);
+    padding-bottom: clamp(2.25rem, 5vw, 3.5rem);
+  }
+
+  .hydra-facial-why__visual {
+    min-height: 100%;
+  }
+
+  .hydra-facial-why__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background-position: center;
+  }
+}
+
+.hydra-facial-page .hydra-facial-book-strip__card .cryolipolysis-hero-form {
+  padding: 0;
+  margin-top: 0.35rem;
+}
+
+.hydra-facial-page .hydra-facial-book-strip.contact-us-page-wrap::before {
+  display: none;
+}
